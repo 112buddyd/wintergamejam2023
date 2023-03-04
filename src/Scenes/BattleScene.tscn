@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdt4q23clb36y"]
+
+[ext_resource type="Texture2D" uid="uid://bswtu2c2c8301" path="res://assets/Backgrounds/demobackground.png" id="1_l7xvc"]
+
+[node name="BattleScreen" type="Node2D"]
+metadata/_edit_vertical_guides_ = [1150.0, 1150.0, 1152.0]
+metadata/_edit_horizontal_guides_ = [648.0]
+
+[node name="Demobackground" type="Sprite2D" parent="."]
+position = Vector2(1728, 324)
+texture = ExtResource("1_l7xvc")
