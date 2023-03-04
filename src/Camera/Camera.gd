@@ -7,7 +7,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(str(position.x))
 	var cameraVelocity = Vector2()
 	var speed = 1000
 	cameraVelocity = Vector2()

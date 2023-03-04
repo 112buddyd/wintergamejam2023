@@ -12,4 +12,4 @@ position = Vector2(1728, 324)
 texture = ExtResource("1_l7xvc")
 
 [node name="Node2D" parent="." instance=ExtResource("2_0sv4s")]
-position = Vector2(2880, 325)
+position = Vector2(576, 324)
