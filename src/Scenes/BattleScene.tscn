@@ -132,7 +132,7 @@ position = Vector2(576, 324)
 texture = ExtResource("2_kh086")
 
 [node name="CityArea" parent="." instance=ExtResource("24_ik2gs")]
-position = Vector2(180, 258)
+position = Vector2(178, 251)
 
 [node name="Greyman" parent="." instance=ExtResource("25_13pcj")]
-position = Vector2(432, 274)
+position = Vector2(427, 325)

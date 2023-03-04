@@ -11,7 +11,7 @@ size = Vector2(37, 42)
 script = ExtResource("1_3m54y")
 
 [node name="GMBulletSpawn" type="Node2D" parent="."]
-position = Vector2(-21, 16)
+position = Vector2(-22, 16)
 script = ExtResource("2_qiav2")
 
 [node name="GreymanSprite" type="Sprite2D" parent="."]

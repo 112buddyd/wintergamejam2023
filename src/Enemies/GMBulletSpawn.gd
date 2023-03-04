@@ -21,7 +21,6 @@ func _process(_delta):
 	for enemy in all_enemy:
 		var fire_to_enemy_distance = position.distance_to(enemy.position)
 		if fire_to_enemy_distance < shoot_distance:
-			print("Shoot")
 			shoot_distance = fire_to_enemy_distance
 			close_enemy = enemy
 			look_at(close_enemy.position)
