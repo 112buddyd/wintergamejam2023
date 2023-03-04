@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cdt4q23clb36y"]
+[gd_scene load_steps=27 format=3 uid="uid://cdt4q23clb36y"]
 
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
 [ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="2_kh086"]
@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://g7a3kpjvne45" path="res://assets/Backgrounds/DogfightAnimation/frame0013.png" id="16_htiy5"]
 [ext_resource type="Texture2D" uid="uid://dqsynhxyoqfw6" path="res://assets/Backgrounds/DogfightAnimation/frame0014.png" id="17_achx4"]
 [ext_resource type="Texture2D" uid="uid://dygj3bfa0r141" path="res://assets/Backgrounds/DogfightAnimation/frame0015.png" id="18_enmrb"]
+[ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
+[ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -89,7 +91,7 @@ layer = 100
 
 [node name="ControlPanel" parent="UserInterface" instance=ExtResource("4_da5fy")]
 
-[node name="Node2D" parent="." instance=ExtResource("2_0sv4s")]
+[node name="Camera" parent="." instance=ExtResource("2_0sv4s")]
 position = Vector2(576, 324)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -106,13 +108,13 @@ texture = ExtResource("3_xgruf")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.05, 0.05)
-motion_mirroring = Vector2(3000, 0)
+motion_mirroring = Vector2(7500, 0)
 script = ExtResource("3_hmqi1")
 
 [node name="Will Smiff" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(1000, 72)
 sprite_frames = SubResource("SpriteFrames_7yx8q")
-frame_progress = 0.793008
+frame_progress = 0.972029
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
@@ -128,3 +130,9 @@ motion_mirroring = Vector2(1152, 0)
 [node name="Ground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(576, 324)
 texture = ExtResource("2_kh086")
+
+[node name="CityArea" parent="." instance=ExtResource("24_ik2gs")]
+position = Vector2(180, 258)
+
+[node name="Greyman" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(432, 274)
