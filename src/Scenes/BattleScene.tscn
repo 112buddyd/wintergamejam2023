@@ -1,31 +1,130 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdt4q23clb36y"]
+[gd_scene load_steps=25 format=3 uid="uid://cdt4q23clb36y"]
 
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
 [ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="2_kh086"]
+[ext_resource type="Texture2D" uid="uid://de05dqexhkt8v" path="res://assets/Backgrounds/DogfightAnimation/frame0000.png" id="3_7baca"]
+[ext_resource type="Script" path="res://src/Scenes/CloudLayer.gd" id="3_f73sk"]
 [ext_resource type="Texture2D" uid="uid://ceias11glwken" path="res://assets/Backgrounds/backgroundMountainParalax.png" id="3_fo81n"]
+[ext_resource type="Script" path="res://src/Scenes/WillSmiff.gd" id="3_hmqi1"]
+[ext_resource type="Texture2D" uid="uid://b6uw6r5wttf8k" path="res://assets/Backgrounds/clouds.png" id="3_xgruf"]
+[ext_resource type="Texture2D" uid="uid://dh50gsyxj2nu3" path="res://assets/Backgrounds/DogfightAnimation/frame0001.png" id="4_4k4iu"]
+[ext_resource type="PackedScene" uid="uid://d3l3a6o3sl0mg" path="res://src/Camera/control_panel.tscn" id="4_da5fy"]
+[ext_resource type="Texture2D" uid="uid://geq46t7bektd" path="res://assets/Backgrounds/DogfightAnimation/frame0002.png" id="5_ro5no"]
+[ext_resource type="Texture2D" uid="uid://dvgkogo41up1l" path="res://assets/Backgrounds/DogfightAnimation/frame0003.png" id="6_rrqev"]
+[ext_resource type="Texture2D" uid="uid://b82aros4yvypu" path="res://assets/Backgrounds/DogfightAnimation/frame0004.png" id="7_h01sv"]
+[ext_resource type="Texture2D" uid="uid://blj0y6r3ylxi7" path="res://assets/Backgrounds/DogfightAnimation/frame0005.png" id="8_srix7"]
+[ext_resource type="Texture2D" uid="uid://i4h0q3ti5llx" path="res://assets/Backgrounds/DogfightAnimation/frame0006.png" id="9_845n7"]
+[ext_resource type="Texture2D" uid="uid://cbrneakovvigj" path="res://assets/Backgrounds/DogfightAnimation/frame0007.png" id="10_jfvlj"]
+[ext_resource type="Texture2D" uid="uid://ba8iqp4bw7x3n" path="res://assets/Backgrounds/DogfightAnimation/frame0008.png" id="11_ipm5t"]
+[ext_resource type="Texture2D" uid="uid://c47087abvcmfb" path="res://assets/Backgrounds/DogfightAnimation/frame0009.png" id="12_hiq21"]
+[ext_resource type="Texture2D" uid="uid://bcfhxicvjckta" path="res://assets/Backgrounds/DogfightAnimation/frame0010.png" id="13_jj6cj"]
+[ext_resource type="Texture2D" uid="uid://bxd2b1owbedp5" path="res://assets/Backgrounds/DogfightAnimation/frame0011.png" id="14_bxbve"]
+[ext_resource type="Texture2D" uid="uid://sgxna1a57rm2" path="res://assets/Backgrounds/DogfightAnimation/frame0012.png" id="15_eks1q"]
+[ext_resource type="Texture2D" uid="uid://g7a3kpjvne45" path="res://assets/Backgrounds/DogfightAnimation/frame0013.png" id="16_htiy5"]
+[ext_resource type="Texture2D" uid="uid://dqsynhxyoqfw6" path="res://assets/Backgrounds/DogfightAnimation/frame0014.png" id="17_achx4"]
+[ext_resource type="Texture2D" uid="uid://dygj3bfa0r141" path="res://assets/Backgrounds/DogfightAnimation/frame0015.png" id="18_enmrb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7baca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4k4iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ro5no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rrqev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_h01sv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_srix7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_845n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jfvlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ipm5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hiq21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jj6cj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bxbve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_eks1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_htiy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_achx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_enmrb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BattleScreen" type="Node2D"]
 metadata/_edit_vertical_guides_ = [1150.0, 1150.0, 1152.0, 576.0, 576.0, 576.0, 2881.0]
 metadata/_edit_horizontal_guides_ = [648.0, 138.0, 138.0]
 
+[node name="UserInterface" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="ControlPanel" parent="UserInterface" instance=ExtResource("4_da5fy")]
+
 [node name="Node2D" parent="." instance=ExtResource("2_0sv4s")]
 position = Vector2(576, 324)
 
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(1, 0)
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1156, 0)
+script = ExtResource("3_f73sk")
+
+[node name="Cloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(577, 72)
+texture = ExtResource("3_xgruf")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.05, 0.05)
+motion_mirroring = Vector2(3000, 0)
+script = ExtResource("3_hmqi1")
+
+[node name="Will Smiff" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1000, 72)
+sprite_frames = SubResource("SpriteFrames_7yx8q")
+frame_progress = 0.793008
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(1156, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+[node name="Mountains" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(578, 72)
 texture = ExtResource("3_fo81n")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1152, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Ground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(576, 324)
 texture = ExtResource("2_kh086")
