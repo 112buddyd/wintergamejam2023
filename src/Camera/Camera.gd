@@ -34,9 +34,10 @@ func _input(event):
 		isMouseDragging = true
 	elif event.is_action_released("move_camera_with_mouse"):
 		isMouseDragging = false
-	if isMouseDragging:
+	if isMouseDragging and position.x <= 2875 and position.x >= 570:
 		var deltaCam = get_global_mouse_position() - lastMousePos
-		self.translate(Vector2(-deltaCam.x, 0))
+		var newCamX = clamp(position.x - deltaCam.x, 585, 2875)
+		position.x = newCamX;
 	lastMousePos = get_global_mouse_position()
 	
 	
