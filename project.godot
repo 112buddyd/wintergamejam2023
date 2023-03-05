@@ -47,6 +47,13 @@ move_camera_with_mouse={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="PlayerProjectiles"
+2d_physics/layer_2="EnemyProjectiles"
+2d_physics/layer_3="PlayerBuildings"
+2d_physics/layer_4="EnemyBodies"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

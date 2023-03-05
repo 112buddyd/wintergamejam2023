@@ -8,6 +8,7 @@ var force_explode_timer = LIFETIME_DURATION
 func _ready():
 	print("bullet")
 
+
 func _physics_process(delta):
 	force_explode_timer -= delta
 	if force_explode_timer < 0:
@@ -20,4 +21,5 @@ func _physics_process(delta):
 	
 
 func explode():
+	print("Explode")
 	queue_free()

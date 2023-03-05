@@ -22,6 +22,7 @@ func _process(_delta):
 	if timer > reload_time:
 		shoot_distance = 1000.0
 		var all_enemy = get_tree().get_nodes_in_group("PlayerBuilding")
+		print(all_enemy[0])
 		for enemy in all_enemy:
 			var fire_to_enemy_distance = position.distance_to(enemy.position)
 			if fire_to_enemy_distance < shoot_distance:

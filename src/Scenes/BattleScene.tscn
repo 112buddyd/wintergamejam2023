@@ -114,7 +114,8 @@ script = ExtResource("3_hmqi1")
 [node name="Will Smiff" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(1000, 72)
 sprite_frames = SubResource("SpriteFrames_7yx8q")
-frame_progress = 0.972029
+frame = 3
+frame_progress = 0.0640026
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.5, 0.5)
