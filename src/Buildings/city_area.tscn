@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ausra"]
 size = Vector2(282, 308)
 
-[node name="CityArea" type="CharacterBody2D" groups=["PlayerBuilding"]]
+[node name="CityArea" type="CharacterBody2D" groups=["PlayerBuilding", "player"]]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_oenav")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7yli1jw4mq2u"]
+
+[ext_resource type="Texture2D" uid="uid://k032oiah6hrt" path="res://assets/Textures/Actors/BasicSoldier.png" id="1_injc8"]
+[ext_resource type="Script" path="res://src/Military/soldier_basic.gd" id="1_jlfhi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nhqf"]
+size = Vector2(25, 45)
+
+[node name="SoldierBasic" type="CharacterBody2D" groups=["player"]]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_jlfhi")
+
+[node name="SoldierBasicSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_injc8")
+
+[node name="SoldierBasicCollision" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 1.5)
+shape = SubResource("RectangleShape2D_8nhqf")
+
+[node name="BSBS" type="Node2D" parent="."]
+position = Vector2(22, -1)

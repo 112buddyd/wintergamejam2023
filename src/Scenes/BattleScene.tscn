@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cdt4q23clb36y"]
+[gd_scene load_steps=28 format=3 uid="uid://cdt4q23clb36y"]
 
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
 [ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="2_kh086"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://dygj3bfa0r141" path="res://assets/Backgrounds/DogfightAnimation/frame0015.png" id="18_enmrb"]
 [ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
 [ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
+[ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -137,3 +138,39 @@ position = Vector2(178, 251)
 
 [node name="Greyman" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1296, 303)
+
+[node name="SoldierBasic2" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(305, 273)
+
+[node name="SoldierBasic" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(304, 330)
+
+[node name="SoldierBasic3" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(311, 397)
+
+[node name="SoldierBasic4" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(326, 213)
+
+[node name="SoldierBasic5" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(357, 436)
+
+[node name="Greyman2" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1309, 381)
+
+[node name="Greyman3" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1267, 209)
+
+[node name="Greyman4" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1328, 240)
+
+[node name="Greyman5" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1272, 446)
+
+[node name="SoldierBasic6" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(353, 378)
+
+[node name="SoldierBasic7" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(292, 208)
+
+[node name="Greyman6" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1113, 306)

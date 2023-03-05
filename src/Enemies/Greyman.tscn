@@ -16,6 +16,8 @@ script/source = "extends Node2D
 size = Vector2(37, 42)
 
 [node name="Greyman" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_3m54y")
 
 [node name="GMBulletSpawn" type="Node2D" parent="."]

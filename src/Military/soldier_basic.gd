@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
-@export var speed := -100
-@export var damage := 10
-@export var shoot_distance : float = 300
-@export var health := 45
 
-const bullet_scene = preload("res://src/bullets/g_mbullet.tscn")
+@export var speed := 75
+@export var damage := 5
+@export var shoot_distance : float = 250
+@export var health := 30
+
+const bullet_scene = preload("res://src/bullets/BSBullet.tscn")
 
 var close_enemy
 var reload_time = 2.0
@@ -27,7 +28,7 @@ func _process(_delta):
 	if timer > reload_time:
 		print(str(timer) + " " + str(_delta))
 		shoot_distance = 300
-		var all_enemy = get_tree().get_nodes_in_group("player")
+		var all_enemy = get_tree().get_nodes_in_group("enemy")
 		for enemy in all_enemy:
 			var fire_to_enemy_distance = position.distance_to(enemy.position)
 			if fire_to_enemy_distance < shoot_distance:
@@ -48,7 +49,7 @@ func _process(_delta):
 func gm_shoot(close_enemy):
 	var bullet = bullet_scene.instantiate()
 	get_tree().get_root().add_child(bullet)
-	bullet.position= $GMBulletSpawn.global_position
+	bullet.position = $BSBS.global_position
 	bullet.linear_velocity = close_enemy.position - bullet.position
 	bullet.damage = damage
 	
@@ -58,4 +59,3 @@ func take_hit(damage: int):
 	print(str(health))
 	if health < 1:
 		queue_free()
-
