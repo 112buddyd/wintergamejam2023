@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cdt4q23clb36y"]
+[gd_scene load_steps=29 format=3 uid="uid://cdt4q23clb36y"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
@@ -27,7 +27,6 @@
 [ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
 [ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
 [ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
-[ext_resource type="PackedScene" path="res://src/Scenes/button.tscn" id="27_0rifr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -84,9 +83,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_2s7yf"]
-resource_name = "building_buttons"
 
 [node name="BattleScreen" type="Node2D"]
 script = ExtResource("1_a60bb")
@@ -180,14 +176,6 @@ position = Vector2(500, 371)
 
 [node name="Greyman6" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1113, 306)
-
-[node name="Button" parent="." instance=ExtResource("27_0rifr")]
-offset_left = 315.0
-offset_top = 243.0
-offset_right = 365.0
-offset_bottom = 293.0
-action_mode = 0
-button_group = SubResource("ButtonGroup_2s7yf")
 
 [node name="AlienSpawner" type="Node2D" parent="."]
 position = Vector2(3507, 313)

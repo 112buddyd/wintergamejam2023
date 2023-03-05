@@ -8,7 +8,7 @@ extends CharacterBody2D
 const bullet_scene = preload("res://src/bullets/g_mbullet.tscn")
 
 var close_enemy
-var reload_time = 2.0
+var reload_time = 0.1
 var timer = reload_time
 var resume_velocity = 0
 var actor_velocity = Vector2.ZERO
