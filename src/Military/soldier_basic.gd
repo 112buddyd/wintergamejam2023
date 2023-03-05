@@ -26,7 +26,6 @@ func _process(_delta):
 	if timer <= 2.0:
 		timer += _delta
 	if timer > reload_time:
-		print(str(timer) + " " + str(_delta))
 		shoot_distance = 300
 		var all_enemy = get_tree().get_nodes_in_group("enemy")
 		for enemy in all_enemy:

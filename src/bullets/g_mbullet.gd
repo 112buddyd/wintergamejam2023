@@ -7,7 +7,7 @@ var force_explode_timer = LIFETIME_DURATION
 var damage = 10
 
 func _ready():
-	print("bullet")
+	pass
 
 
 func _physics_process(delta):
@@ -16,6 +16,7 @@ func _physics_process(delta):
 		explode()
 	
 	var collision = move_and_collide(linear_velocity.normalized() * delta * speed)
+	
 	if collision and collision.get_collider().has_method("take_hit"):
 		collision.get_collider().take_hit(damage)
 		explode()
@@ -23,5 +24,5 @@ func _physics_process(delta):
 	
 
 func explode():
-	print("Explode")
+
 	queue_free()

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://caje5g4pess6j"]
+
+[ext_resource type="Script" path="res://src/Buildings/barracks.gd" id="1_6kmo0"]
+[ext_resource type="Texture2D" uid="uid://twvb8n6vxa7h" path="res://assets/Textures/Barracks.png" id="1_iyby6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jixks"]
+size = Vector2(182, 158.87)
+
+[node name="Barracks" type="CharacterBody2D" groups=["PlayerBuilding", "player"]]
+scale = Vector2(0.5, 0.5)
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_6kmo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jixks")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-3, -1.43494)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_iyby6")

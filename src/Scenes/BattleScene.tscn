@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cdt4q23clb36y"]
+[gd_scene load_steps=30 format=3 uid="uid://cdt4q23clb36y"]
 
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
 [ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="2_kh086"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
 [ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
 [ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
+[ext_resource type="PackedScene" uid="uid://cbxhmnowsvk53" path="res://src/Scenes/button.tscn" id="27_0rifr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -82,6 +83,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_v0ef5"]
+resource_name = "building_buttons"
 
 [node name="BattleScreen" type="Node2D"]
 metadata/_edit_vertical_guides_ = [1150.0, 1150.0, 1152.0, 576.0, 576.0, 576.0, 2881.0]
@@ -140,19 +144,19 @@ position = Vector2(178, 251)
 position = Vector2(1296, 303)
 
 [node name="SoldierBasic2" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(305, 273)
+position = Vector2(415, 279)
 
 [node name="SoldierBasic" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(304, 330)
+position = Vector2(483, 322)
 
 [node name="SoldierBasic3" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(311, 397)
+position = Vector2(451, 433)
 
 [node name="SoldierBasic4" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(326, 213)
+position = Vector2(433, 193)
 
 [node name="SoldierBasic5" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(357, 436)
+position = Vector2(511, 444)
 
 [node name="Greyman2" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1309, 381)
@@ -163,14 +167,22 @@ position = Vector2(1267, 209)
 [node name="Greyman4" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1328, 240)
 
+[node name="SoldierBasic7" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(497, 200)
+
 [node name="Greyman5" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1272, 446)
 
 [node name="SoldierBasic6" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(353, 378)
-
-[node name="SoldierBasic7" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(292, 208)
+position = Vector2(500, 371)
 
 [node name="Greyman6" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1113, 306)
+
+[node name="Button" parent="." instance=ExtResource("27_0rifr")]
+offset_left = 315.0
+offset_top = 243.0
+offset_right = 365.0
+offset_bottom = 293.0
+action_mode = 0
+button_group = SubResource("ButtonGroup_v0ef5")

@@ -25,7 +25,6 @@ func _process(_delta):
 	if timer <= 2.0:
 		timer += _delta
 	if timer > reload_time:
-		print(str(timer) + " " + str(_delta))
 		shoot_distance = 300
 		var all_enemy = get_tree().get_nodes_in_group("player")
 		for enemy in all_enemy:
@@ -55,7 +54,6 @@ func gm_shoot(close_enemy):
 
 func take_hit(damage: int):
 	health -= damage
-	print(str(health))
 	if health < 1:
 		queue_free()
 
