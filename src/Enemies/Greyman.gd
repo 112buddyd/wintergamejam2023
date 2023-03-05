@@ -21,19 +21,22 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	timer += _delta
+	if timer <= 2.0:
+		timer += _delta
 	if timer > reload_time:
+		print(str(timer) + " " + str(_delta))
 		shoot_distance = 300
 		var all_enemy = get_tree().get_nodes_in_group("PlayerBuilding")
 		for enemy in all_enemy:
 			var fire_to_enemy_distance = position.distance_to(enemy.position)
 			if fire_to_enemy_distance < shoot_distance:
+				timer -= reload_time
 				shoot_distance = fire_to_enemy_distance
 				close_enemy = enemy
 				gm_shoot(close_enemy)
-				timer -= reload_time
-			else:
-				actor_velocity.x = resume_velocity
+				return
+		actor_velocity.x = resume_velocity
+				
 	else:
 		actor_velocity.x = 0
 	set_velocity(actor_velocity)
