@@ -2,17 +2,25 @@
 
 [ext_resource type="Script" path="res://src/Enemies/Greyman.gd" id="1_3m54y"]
 [ext_resource type="Texture2D" uid="uid://c6me1bled7syl" path="res://assets/Textures/Actors/greenman.png" id="1_43t75"]
-[ext_resource type="Script" path="res://src/Enemies/GMBulletSpawn.gd" id="2_qiav2"]
+
+[sub_resource type="GDScript" id="GDScript_3jau0"]
+script/source = "extends Node2D
+
+
+
+	
+	
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wehw"]
 size = Vector2(37, 42)
 
-[node name="Greyman" type="Area2D" groups=["enemy"]]
+[node name="Greyman" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_3m54y")
 
 [node name="GMBulletSpawn" type="Node2D" parent="."]
 position = Vector2(-22, 16)
-script = ExtResource("2_qiav2")
+script = SubResource("GDScript_3jau0")
 
 [node name="GreymanSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_43t75")

@@ -15,7 +15,7 @@ func _physics_process(delta):
 		explode()
 	
 	var collision = move_and_collide(linear_velocity.normalized() * delta * speed)
-	if collision and collision.get_collider().is_in_group("PlayerBuilding"):	
+	if collision:	
 		explode()
 	
 	

@@ -1,36 +1,45 @@
-extends Area2D
+extends CharacterBody2D
 
 @export var speed := -100
 @export var damage := 2500
-@export var shoot_distance : float = 1000
+@export var shoot_distance : float = 300
 
 const bullet_scene = preload("res://src/bullets/g_mbullet.tscn")
 
 var close_enemy
 var reload_time = 2.0
 var timer = reload_time
+var resume_velocity = 0
+var actor_velocity = Vector2.ZERO
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	actor_velocity.x = speed
+	resume_velocity = actor_velocity.x
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	timer += _delta
 	if timer > reload_time:
-		shoot_distance = 1000.0
+		shoot_distance = 300
 		var all_enemy = get_tree().get_nodes_in_group("PlayerBuilding")
-		print(all_enemy[0])
 		for enemy in all_enemy:
 			var fire_to_enemy_distance = position.distance_to(enemy.position)
 			if fire_to_enemy_distance < shoot_distance:
 				shoot_distance = fire_to_enemy_distance
 				close_enemy = enemy
-				look_at(close_enemy.position)
 				gm_shoot(close_enemy)
 				timer -= reload_time
+			else:
+				actor_velocity.x = resume_velocity
+	else:
+		actor_velocity.x = 0
+	set_velocity(actor_velocity)
+	move_and_slide()
+	
+	
 
 func gm_shoot(close_enemy):
 	var bullet = bullet_scene.instantiate()

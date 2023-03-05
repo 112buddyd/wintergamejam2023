@@ -136,4 +136,4 @@ texture = ExtResource("2_kh086")
 position = Vector2(178, 251)
 
 [node name="Greyman" parent="." instance=ExtResource("25_13pcj")]
-position = Vector2(427, 325)
+position = Vector2(1296, 303)
