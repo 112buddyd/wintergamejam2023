@@ -12,6 +12,8 @@ var cash = 50
 var energy = 50
 var unobtainium = 50
 
+var selectedBuilding = null
+
 func _process(delta):
 	if Input.is_action_just_pressed("go"):
 		player_hold = false

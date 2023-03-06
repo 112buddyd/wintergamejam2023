@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/Buildings/construction_site.gd" id="1_kb3vj"]
 [ext_resource type="Texture2D" uid="uid://e2csdh4joa75" path="res://assets/Textures/construction_site.png" id="1_x35dt"]
 
-[node name="construction_site" type="Node2D" groups=["PlayerBuildings", "player"]]
+[node name="construction_site" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(165, 142)
@@ -12,7 +12,7 @@ collision_mask = 0
 input_pickable = true
 script = ExtResource("1_kb3vj")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" groups=["player"]]
 z_index = -1
 position = Vector2(-77, -85)
 scale = Vector2(0.5, 0.5)
