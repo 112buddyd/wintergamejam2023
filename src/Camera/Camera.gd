@@ -19,9 +19,9 @@ func _process(delta):
 	var cameraVelocity = Vector2()
 	var speed = 1000
 	cameraVelocity = Vector2()
-	if Input.is_action_pressed("move_camera_right")and position.x <= 2875:
+	if Input.is_action_pressed("move_camera_right")and global_position.x <= 2875:
 		cameraVelocity = Vector2(speed, 0)
-	if Input.is_action_pressed("move_camera_left") and position.x >= 585:
+	if Input.is_action_pressed("move_camera_left") and global_position.x >= 585:
 		speed *= -1
 		cameraVelocity = Vector2(speed, 0)
 	self.translate(cameraVelocity * delta)
@@ -36,8 +36,8 @@ func _input(event):
 		isMouseDragging = false
 	if isMouseDragging:
 		var deltaCam = get_global_mouse_position() - lastMousePos
-		var newCamX = clamp(position.x - deltaCam.x, 585, 2875)
-		position.x = newCamX;
+		var newCamX = clamp(global_position.x - deltaCam.x, 585, 2875)
+		global_position.x = newCamX;
 	lastMousePos = get_global_mouse_position()
 	
 	

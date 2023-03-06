@@ -98,7 +98,7 @@ layer = 100
 mouse_filter = 1
 
 [node name="Camera" parent="." instance=ExtResource("2_0sv4s")]
-position = Vector2(699, 367)
+position = Vector2(695, 374)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
