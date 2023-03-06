@@ -2,13 +2,13 @@ extends CharacterBody2D
 
 @export var speed := -100
 @export var damage := 10
-@export var shoot_distance : float = 300
+@export var shoot_distance_init : float = 300
 @export var health := 45
+@export var reload_time = 2.0
 
 const bullet_scene = preload("res://src/bullets/g_mbullet.tscn")
 
 var close_enemy
-var reload_time = 0.1
 var timer = reload_time
 var resume_velocity = 0
 var actor_velocity = Vector2.ZERO
@@ -22,10 +22,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if timer <= 2.0:
+	if timer <= reload_time:
 		timer += _delta
 	if timer > reload_time:
-		shoot_distance = 300
+		var shoot_distance = shoot_distance_init
 		var all_enemy = get_tree().get_nodes_in_group("player")
 		for enemy in all_enemy:
 			var fire_to_enemy_distance = position.distance_to(enemy.position)
