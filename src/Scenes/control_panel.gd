@@ -16,7 +16,6 @@ func _input(event):
 		get_viewport().set_input_as_handled()
 	
 func _on_mouse_entered():
-	print("test")
 	isMouseInBounds = true
 	
 func _on_mouse_exited():
