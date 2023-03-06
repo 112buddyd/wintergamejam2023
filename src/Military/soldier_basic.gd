@@ -25,7 +25,7 @@ func _ready():
 func _process(_delta):
 	if timer <= 2.0:
 		timer += _delta
-	if timer > reload_time:
+	if timer > reload_time and PlayerData.player_retreat == false:
 		var shoot_distance = shoot_distance_init
 		var all_enemy = get_tree().get_nodes_in_group("enemy")
 		for enemy in all_enemy:
@@ -37,11 +37,12 @@ func _process(_delta):
 				gm_shoot(close_enemy)
 				return
 		actor_velocity.x = resume_velocity
-				
 	else:
 		actor_velocity.x = 0
-	#if player_data.player_hold == true:
-		#actor_velocity.x = 0
+	if PlayerData.player_hold == true:
+		actor_velocity.x = 0
+	if PlayerData.player_retreat == true:
+		actor_velocity.x = resume_velocity * -1.0
 	set_velocity(actor_velocity)
 	move_and_slide()
 	
@@ -51,7 +52,7 @@ func gm_shoot(close_enemy):
 	var bullet = bullet_scene.instantiate()
 	get_tree().get_root().add_child(bullet)
 	bullet.position = $BSBS.global_position
-	bullet.linear_velocity = close_enemy.position - bullet.position
+	bullet.linear_velocity = close_enemy.global_position - bullet.position
 	bullet.damage = damage
 	
 

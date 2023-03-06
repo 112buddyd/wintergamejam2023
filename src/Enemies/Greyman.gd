@@ -48,7 +48,7 @@ func gm_shoot(close_enemy):
 	var bullet = bullet_scene.instantiate()
 	get_tree().get_root().add_child(bullet)
 	bullet.position= $GMBulletSpawn.global_position
-	bullet.linear_velocity = close_enemy.position - bullet.position
+	bullet.linear_velocity = close_enemy.global_position - bullet.position
 	bullet.damage = damage
 	
 
