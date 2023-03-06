@@ -14,10 +14,10 @@ func _input(event):
 	if event.is_action_released("select") && isMouseInBounds:
 		var controlPanel = get_parent().get_parent().find_child("ControlPanel")
 		if isBuildingGUIActive:
-			#controlPanel.find_child("HBoxContainer").set_visible(false)
+			controlPanel.find_child("HBoxContainer").set_visible(false)
 			isBuildingGUIActive = false;
 		else:
-			#controlPanel.find_child("HBoxContainer").set_visible(true)
+			controlPanel.find_child("HBoxContainer").set_visible(true)
 			isBuildingGUIActive = true;
 		get_viewport().set_input_as_handled()
 	
