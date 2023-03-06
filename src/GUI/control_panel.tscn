@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cw3ha51vmpgop"]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_6g3k6"]
 [ext_resource type="Script" path="res://src/GUI/HUD.gd" id="2_ugg5w"]
-[ext_resource type="Script" path="res://src/GUI/ItemList.gd" id="3_dfu05"]
+[ext_resource type="Script" path="res://src/GUI/Barracks/ItemList.gd" id="3_dfu05"]
 
 [sub_resource type="GDScript" id="GDScript_t23yr"]
 script/source = "extends Control
