@@ -86,6 +86,7 @@ animations = [{
 }]
 
 [node name="BattleScreen" type="Node2D"]
+position = Vector2(-118, -43)
 script = ExtResource("1_a60bb")
 metadata/_edit_vertical_guides_ = [1150.0, 1150.0, 1152.0, 576.0, 576.0, 576.0, 3500.0]
 metadata/_edit_horizontal_guides_ = [648.0, 138.0, 138.0]
@@ -97,7 +98,7 @@ layer = 100
 mouse_filter = 1
 
 [node name="Camera" parent="." instance=ExtResource("2_0sv4s")]
-position = Vector2(576, 324)
+position = Vector2(699, 367)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -138,12 +139,13 @@ position = Vector2(576, 324)
 texture = ExtResource("2_kh086")
 
 [node name="CityArea" parent="." instance=ExtResource("24_ik2gs")]
-position = Vector2(178, 251)
+position = Vector2(109, 256)
 
 [node name="Greyman" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1296, 303)
 
 [node name="SoldierBasic2" parent="." instance=ExtResource("26_71dk0")]
+<<<<<<< HEAD
 position = Vector2(415, 279)
 speed = null
 damage = null
@@ -182,6 +184,21 @@ damage = null
 shoot_distance_init = null
 health = null
 reload_time = null
+=======
+position = Vector2(547, 293)
+
+[node name="SoldierBasic" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(546, 351)
+
+[node name="SoldierBasic3" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(550, 239)
+
+[node name="SoldierBasic4" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(541, 521)
+
+[node name="SoldierBasic5" parent="." instance=ExtResource("26_71dk0")]
+position = Vector2(545, 469)
+>>>>>>> c247547fe7b4813e6ede111d048bcf10dfe9a9bc
 
 [node name="Greyman2" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1309, 381)
@@ -193,23 +210,31 @@ position = Vector2(1267, 209)
 position = Vector2(1328, 240)
 
 [node name="SoldierBasic7" parent="." instance=ExtResource("26_71dk0")]
+<<<<<<< HEAD
 position = Vector2(497, 200)
 speed = null
 damage = null
 shoot_distance_init = null
 health = null
 reload_time = null
+=======
+position = Vector2(547, 201)
+>>>>>>> c247547fe7b4813e6ede111d048bcf10dfe9a9bc
 
 [node name="Greyman5" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1272, 446)
 
 [node name="SoldierBasic6" parent="." instance=ExtResource("26_71dk0")]
+<<<<<<< HEAD
 position = Vector2(500, 371)
 speed = null
 damage = null
 shoot_distance_init = null
 health = null
 reload_time = null
+=======
+position = Vector2(548, 406)
+>>>>>>> c247547fe7b4813e6ede111d048bcf10dfe9a9bc
 
 [node name="Greyman6" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1113, 306)
@@ -219,20 +244,20 @@ position = Vector2(3507, 313)
 
 [node name="construction_site2" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(443, 240)
+position = Vector2(337, 414)
 
 [node name="construction_site3" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(252, 340)
+position = Vector2(130, 436)
 
 [node name="construction_site5" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(614, 107)
+position = Vector2(359, 234)
 
 [node name="construction_site4" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(666, 338)
+position = Vector2(270, 315)
 
 [node name="construction_site" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(254, 113)
+position = Vector2(158, 208)

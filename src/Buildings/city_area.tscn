@@ -1,19 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bblmsh26u78sj"]
+[gd_scene load_steps=2 format=3 uid="uid://bblmsh26u78sj"]
 
-[ext_resource type="Script" path="res://src/Buildings/city_area.gd" id="1_oenav"]
 [ext_resource type="Texture2D" uid="uid://co2hblfvn4hgh" path="res://assets/Textures/test city plz ignore.png" id="1_y3lbq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ausra"]
-size = Vector2(282, 308)
+[node name="StaticBody2D" type="StaticBody2D"]
 
-[node name="CityArea" type="CharacterBody2D" groups=["PlayerBuilding", "player"]]
-collision_layer = 4
-collision_mask = 0
-script = ExtResource("1_oenav")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(5, -18)
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(123, 343, 287, 279, 285, 181, 166, 131, 166, 62, 85, 31, 46, 50, 4, 35, 2, 68, 3, 324, 41, 309)
 
-[node name="CitySprite" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="CollisionPolygon2D"]
+position = Vector2(183, 183)
 texture = ExtResource("1_y3lbq")
-
-[node name="CityCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-39, 4)
-shape = SubResource("RectangleShape2D_ausra")
