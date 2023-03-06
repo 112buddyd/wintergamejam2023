@@ -8,9 +8,10 @@ var player_hold = true
 var player_attack = false
 var player_retreat = false
 var score = 10
-var cash = 50
+var money = 100
 var energy = 50
 var unobtainium = 50
+var militaryPower = 10
 
 var selectedBuilding = null
 

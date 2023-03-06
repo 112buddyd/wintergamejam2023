@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbt1kx7iqqpec"]
+[gd_scene load_steps=5 format=3 uid="uid://b3s381fo0eb6b"]
 
 [ext_resource type="Script" path="res://src/Enemies/Greyman.gd" id="1_3m54y"]
-[ext_resource type="Texture2D" uid="uid://c6me1bled7syl" path="res://assets/Textures/Actors/greenman.png" id="1_43t75"]
+[ext_resource type="Texture2D" uid="uid://c6me1bled7syl" path="res://assets/Textures/Actors/greenman.png" id="2_gelnm"]
 
 [sub_resource type="GDScript" id="GDScript_3jau0"]
 script/source = "extends Node2D
@@ -25,7 +25,7 @@ position = Vector2(-22, 16)
 script = SubResource("GDScript_3jau0")
 
 [node name="GreymanSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_43t75")
+texture = ExtResource("2_gelnm")
 
 [node name="GreymanBody" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, 4)

@@ -1,85 +1,85 @@
-[gd_scene load_steps=31 format=3 uid="uid://b86hhelb34xvd"]
+[gd_scene load_steps=31 format=3 uid="uid://bvvfxr1si2pka"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
-[ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="2_kh086"]
-[ext_resource type="Texture2D" uid="uid://de05dqexhkt8v" path="res://assets/Backgrounds/DogfightAnimation/frame0000.png" id="3_7baca"]
 [ext_resource type="Script" path="res://src/Scenes/CloudLayer.gd" id="3_f73sk"]
-[ext_resource type="Texture2D" uid="uid://ceias11glwken" path="res://assets/Backgrounds/backgroundMountainParalax.png" id="3_fo81n"]
 [ext_resource type="Script" path="res://src/Scenes/WillSmiff.gd" id="3_hmqi1"]
-[ext_resource type="Texture2D" uid="uid://b6uw6r5wttf8k" path="res://assets/Backgrounds/clouds.png" id="3_xgruf"]
-[ext_resource type="Texture2D" uid="uid://dh50gsyxj2nu3" path="res://assets/Backgrounds/DogfightAnimation/frame0001.png" id="4_4k4iu"]
-[ext_resource type="PackedScene" uid="uid://cs2j3coqyvbm1" path="res://src/GUI/control_panel.tscn" id="4_da5fy"]
-[ext_resource type="Texture2D" uid="uid://geq46t7bektd" path="res://assets/Backgrounds/DogfightAnimation/frame0002.png" id="5_ro5no"]
-[ext_resource type="Texture2D" uid="uid://dvgkogo41up1l" path="res://assets/Backgrounds/DogfightAnimation/frame0003.png" id="6_rrqev"]
-[ext_resource type="Texture2D" uid="uid://b82aros4yvypu" path="res://assets/Backgrounds/DogfightAnimation/frame0004.png" id="7_h01sv"]
-[ext_resource type="Texture2D" uid="uid://blj0y6r3ylxi7" path="res://assets/Backgrounds/DogfightAnimation/frame0005.png" id="8_srix7"]
-[ext_resource type="Texture2D" uid="uid://i4h0q3ti5llx" path="res://assets/Backgrounds/DogfightAnimation/frame0006.png" id="9_845n7"]
-[ext_resource type="Texture2D" uid="uid://cbrneakovvigj" path="res://assets/Backgrounds/DogfightAnimation/frame0007.png" id="10_jfvlj"]
-[ext_resource type="Texture2D" uid="uid://ba8iqp4bw7x3n" path="res://assets/Backgrounds/DogfightAnimation/frame0008.png" id="11_ipm5t"]
-[ext_resource type="Texture2D" uid="uid://c47087abvcmfb" path="res://assets/Backgrounds/DogfightAnimation/frame0009.png" id="12_hiq21"]
-[ext_resource type="Texture2D" uid="uid://bcfhxicvjckta" path="res://assets/Backgrounds/DogfightAnimation/frame0010.png" id="13_jj6cj"]
-[ext_resource type="Texture2D" uid="uid://bxd2b1owbedp5" path="res://assets/Backgrounds/DogfightAnimation/frame0011.png" id="14_bxbve"]
-[ext_resource type="Texture2D" uid="uid://sgxna1a57rm2" path="res://assets/Backgrounds/DogfightAnimation/frame0012.png" id="15_eks1q"]
-[ext_resource type="Texture2D" uid="uid://g7a3kpjvne45" path="res://assets/Backgrounds/DogfightAnimation/frame0013.png" id="16_htiy5"]
-[ext_resource type="Texture2D" uid="uid://dqsynhxyoqfw6" path="res://assets/Backgrounds/DogfightAnimation/frame0014.png" id="17_achx4"]
-[ext_resource type="Texture2D" uid="uid://dygj3bfa0r141" path="res://assets/Backgrounds/DogfightAnimation/frame0015.png" id="18_enmrb"]
-[ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
-[ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
-[ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
-[ext_resource type="PackedScene" uid="uid://cctfe4dpco8hk" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
-[ext_resource type="PackedScene" uid="uid://dw3pbdagxlvkk" path="res://src/Military/tank.tscn" id="30_o08kb"]
+[ext_resource type="PackedScene" uid="uid://cw3ha51vmpgop" path="res://src/GUI/control_panel.tscn" id="4_da5fy"]
+[ext_resource type="Texture2D" uid="uid://b6uw6r5wttf8k" path="res://assets/Backgrounds/clouds.png" id="4_oqc2o"]
+[ext_resource type="Texture2D" uid="uid://de05dqexhkt8v" path="res://assets/Backgrounds/DogfightAnimation/frame0000.png" id="6_3o2to"]
+[ext_resource type="Texture2D" uid="uid://dh50gsyxj2nu3" path="res://assets/Backgrounds/DogfightAnimation/frame0001.png" id="7_pneam"]
+[ext_resource type="Texture2D" uid="uid://geq46t7bektd" path="res://assets/Backgrounds/DogfightAnimation/frame0002.png" id="8_h6in3"]
+[ext_resource type="Texture2D" uid="uid://dvgkogo41up1l" path="res://assets/Backgrounds/DogfightAnimation/frame0003.png" id="9_dx0fw"]
+[ext_resource type="Texture2D" uid="uid://b82aros4yvypu" path="res://assets/Backgrounds/DogfightAnimation/frame0004.png" id="10_e3ed5"]
+[ext_resource type="Texture2D" uid="uid://blj0y6r3ylxi7" path="res://assets/Backgrounds/DogfightAnimation/frame0005.png" id="11_6fb0p"]
+[ext_resource type="Texture2D" uid="uid://i4h0q3ti5llx" path="res://assets/Backgrounds/DogfightAnimation/frame0006.png" id="12_mbqac"]
+[ext_resource type="Texture2D" uid="uid://cbrneakovvigj" path="res://assets/Backgrounds/DogfightAnimation/frame0007.png" id="13_ueoe1"]
+[ext_resource type="Texture2D" uid="uid://ba8iqp4bw7x3n" path="res://assets/Backgrounds/DogfightAnimation/frame0008.png" id="14_48apb"]
+[ext_resource type="Texture2D" uid="uid://c47087abvcmfb" path="res://assets/Backgrounds/DogfightAnimation/frame0009.png" id="15_lhx46"]
+[ext_resource type="Texture2D" uid="uid://bcfhxicvjckta" path="res://assets/Backgrounds/DogfightAnimation/frame0010.png" id="16_d4tbf"]
+[ext_resource type="Texture2D" uid="uid://bxd2b1owbedp5" path="res://assets/Backgrounds/DogfightAnimation/frame0011.png" id="17_ag8dg"]
+[ext_resource type="Texture2D" uid="uid://sgxna1a57rm2" path="res://assets/Backgrounds/DogfightAnimation/frame0012.png" id="18_vps7m"]
+[ext_resource type="Texture2D" uid="uid://g7a3kpjvne45" path="res://assets/Backgrounds/DogfightAnimation/frame0013.png" id="19_l1d1t"]
+[ext_resource type="Texture2D" uid="uid://dqsynhxyoqfw6" path="res://assets/Backgrounds/DogfightAnimation/frame0014.png" id="20_xjoqu"]
+[ext_resource type="Texture2D" uid="uid://dygj3bfa0r141" path="res://assets/Backgrounds/DogfightAnimation/frame0015.png" id="21_vk6pw"]
+[ext_resource type="Texture2D" uid="uid://ceias11glwken" path="res://assets/Backgrounds/backgroundMountainParalax.png" id="22_luc2h"]
+[ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="23_ia7ri"]
+[ext_resource type="PackedScene" uid="uid://cgpgumhx6fn5c" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
+[ext_resource type="PackedScene" uid="uid://b3s381fo0eb6b" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
+[ext_resource type="PackedScene" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
+[ext_resource type="PackedScene" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
+[ext_resource type="PackedScene" path="res://src/Military/tank.tscn" id="30_o08kb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_7baca")
+"texture": ExtResource("6_3o2to")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_4k4iu")
+"texture": ExtResource("7_pneam")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ro5no")
+"texture": ExtResource("8_h6in3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_rrqev")
+"texture": ExtResource("9_dx0fw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_h01sv")
+"texture": ExtResource("10_e3ed5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_srix7")
+"texture": ExtResource("11_6fb0p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_845n7")
+"texture": ExtResource("12_mbqac")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_jfvlj")
+"texture": ExtResource("13_ueoe1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_ipm5t")
+"texture": ExtResource("14_48apb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_hiq21")
+"texture": ExtResource("15_lhx46")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_jj6cj")
+"texture": ExtResource("16_d4tbf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_bxbve")
+"texture": ExtResource("17_ag8dg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_eks1q")
+"texture": ExtResource("18_vps7m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_htiy5")
+"texture": ExtResource("19_l1d1t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_achx4")
+"texture": ExtResource("20_xjoqu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("18_enmrb")
+"texture": ExtResource("21_vk6pw")
 }],
 "loop": true,
 "name": &"default",
@@ -105,7 +105,7 @@ script = ExtResource("3_f73sk")
 
 [node name="Cloud" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(577, 72)
-texture = ExtResource("3_xgruf")
+texture = ExtResource("4_oqc2o")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.05, 0.05)
@@ -124,14 +124,14 @@ motion_mirroring = Vector2(1156, 0)
 
 [node name="Mountains" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(578, 72)
-texture = ExtResource("3_fo81n")
+texture = ExtResource("22_luc2h")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(1152, 0)
 
 [node name="Ground" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(576, 324)
-texture = ExtResource("2_kh086")
+texture = ExtResource("23_ia7ri")
 
 [node name="CityArea" parent="." instance=ExtResource("24_ik2gs")]
 position = Vector2(172, 338)

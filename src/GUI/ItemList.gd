@@ -1,7 +1,7 @@
 extends ItemList
 
 var isMouseInBounds = false;
-const barracks = preload("res://src/buildings/barracks.tscn")
+const barracksScene = preload("res://src/buildings/barracks.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,13 +17,26 @@ func _process(delta):
 
 
 func _on_item_activated(index):
+	var barracksScript = load("res://src/Buildings/barracks.gd")
 	if index == 0:
-		var barrack = barracks.instantiate()
-		find_parent("BattleScreen").add_child(barrack)
-		barrack.global_position = PlayerData.selectedBuilding.global_position
-		barrack.global_position.y -= 40
-		PlayerData.selectedBuilding.queue_free()
-		PlayerData.selectedBuilding = null
+		if PlayerData.money >= barracksScript.COST:
+			PlayerData.money -= barracksScript.COST
+			var barrack = barracksScene.instantiate()
+			find_parent("BattleScreen").add_child(barrack)
+			barrack.global_position = PlayerData.selectedBuilding.global_position
+			barrack.global_position.y -= 40
+			find_parent("BuildingSelect").set_visible(false)
+			PlayerData.selectedBuilding.queue_free()
+			PlayerData.selectedBuilding = null
+		else:
+			var messageLabel = get_parent().find_child("Message")
+			messageLabel.set_text("Cannot Afford! Please select another choice.")
+			var labelSettings = LabelSettings.new()
+			labelSettings.set_font_size(16)
+			labelSettings.set_font_color(Color(0,255,255,255))
+			messageLabel.set_label_settings(labelSettings)
+			
+
 		
 
 		

@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8puem3kj46ws"]
+[gd_scene load_steps=8 format=3 uid="uid://bj63gp6knau67"]
 
 [ext_resource type="Script" path="res://src/bullets/TankShell.gd" id="1_f3wot"]
-[ext_resource type="Texture2D" uid="uid://cyuy67yxmxutn" path="res://assets/Textures/Bullets/tankshell.png" id="2_ylsdp"]
-[ext_resource type="Texture2D" uid="uid://cgdo7mkq7347d" path="res://assets/Textures/Bullets/tankasplode.png" id="3_i68kq"]
+[ext_resource type="Texture2D" uid="uid://cyuy67yxmxutn" path="res://assets/Textures/Bullets/tankshell.png" id="2_mmb63"]
+[ext_resource type="Texture2D" uid="uid://cgdo7mkq7347d" path="res://assets/Textures/Bullets/tankasplode.png" id="3_xo2yv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjcsw"]
 size = Vector2(9, 6)
@@ -75,7 +75,7 @@ collision_mask = 8
 script = ExtResource("1_f3wot")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_ylsdp")
+texture = ExtResource("2_mmb63")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
@@ -87,7 +87,7 @@ shape = SubResource("RectangleShape2D_vjcsw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Explosion"]
 visible = false
-texture = ExtResource("3_i68kq")
+texture = ExtResource("3_xo2yv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
 shape = SubResource("CircleShape2D_ydth6")
