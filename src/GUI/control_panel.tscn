@@ -1,7 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3l3a6o3sl0mg"]
+[gd_scene load_steps=5 format=3 uid="uid://cs2j3coqyvbm1"]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_5wqt0"]
-[ext_resource type="Script" path="res://src/Scenes/control_panel.gd" id="2_k782q"]
+[ext_resource type="Script" path="res://src/GUI/ItemList.gd" id="3_dfu05"]
+
+[sub_resource type="GDScript" id="GDScript_t23yr"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrlp"]
 bg_color = Color(0, 0.517647, 0.611765, 1)
@@ -15,7 +31,7 @@ offset_top = 524.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_5wqt0")
-script = ExtResource("2_k782q")
+script = SubResource("GDScript_t23yr")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -54,7 +70,6 @@ offset_top = 33.0
 offset_right = 1149.0
 offset_bottom = 124.0
 mouse_filter = 0
-theme_override_constants/separation = 0
 
 [node name="TextEdit" type="TextEdit" parent="Panel/HBoxContainer"]
 layout_mode = 2
@@ -74,7 +89,9 @@ middle_mouse_paste_enabled = false
 [node name="ItemList" type="ItemList" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(1, 1, 1, 1)
 theme_override_constants/h_separation = 10
 theme_override_styles/panel = SubResource("StyleBoxFlat_hdrlp")
 item_count = 4
@@ -84,6 +101,7 @@ item_0/text = "Barracks"
 item_1/text = "Hospital"
 item_2/text = "Bank"
 item_3/text = "Power Plant"
+script = ExtResource("3_dfu05")
 
 [node name="TextEdit2" type="TextEdit" parent="Panel/HBoxContainer"]
 layout_mode = 2
@@ -100,5 +118,6 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 minimap_width = 100
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Panel/HBoxContainer/TextEdit" to="." method="_on_text_edit_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/HBoxContainer/TextEdit" to="." method="_on_text_edit_mouse_exited"]
+[connection signal="item_activated" from="Panel/HBoxContainer/ItemList" to="Panel/HBoxContainer/ItemList" method="_on_item_activated"]

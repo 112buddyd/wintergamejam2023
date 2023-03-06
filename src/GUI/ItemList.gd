@@ -1,6 +1,8 @@
-extends Control
+extends ItemList
 
 var isMouseInBounds = false;
+const barracks = preload("res://src/buildings/barracks.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -9,16 +11,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-	
-func _input(event):
-	if event.is_action("select") && isMouseInBounds:
-		print("test")
-		get_viewport().set_input_as_handled()
-	
-func _on_mouse_entered():
-	isMouseInBounds = true
-	
-func _on_mouse_exited():
-	isMouseInBounds = false
 
 
+
+
+
+func _on_item_activated(index):
+	if index == 0:
+		var barrack = barracks.instantiate()
+		find_parent("BattleScreen").add_child(barrack)
+		print("barrack")
+		
+		
