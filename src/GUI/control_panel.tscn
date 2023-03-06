@@ -95,6 +95,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_t05kg")
 text = "        Score:        "
 
 [node name="BuildingSelect" type="HBoxContainer" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = 33.0
