@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg33fk5qyhn7t"]
+[gd_scene load_steps=3 format=3 uid="uid://dg33fk5qyhn7t"]
 
+[ext_resource type="Script" path="res://src/Buildings/barracks.gd" id="1_6kmo0"]
 [ext_resource type="Texture2D" uid="uid://twvb8n6vxa7h" path="res://assets/Textures/Barracks.png" id="2_e80w4"]
 
-[node name="Barracks" type="StaticBody2D"]
+[node name="Barracks" type="StaticBody2D" groups=["player"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_6kmo0")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(13, -56, 45, -40, 45, -23, 94, -1, 94, 18, 12, 58, -103, 11, -103, -9)
@@ -11,3 +15,6 @@ polygon = PackedVector2Array(13, -56, 45, -40, 45, -23, 94, -1, 94, 18, 12, 58, 
 position = Vector2(-4, -33)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("2_e80w4")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

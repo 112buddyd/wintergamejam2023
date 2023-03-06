@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends StaticBody2D
 
 @export var baseSpawnRate = 1
 @export var level := 1
@@ -56,6 +56,7 @@ func _input(event):
 	
 
 func _on_mouse_entered():
+	print("check")
 	isMouseInBounds = true
 
 
