@@ -24,7 +24,8 @@ func _on_item_activated(index):
 			var barrack = barracksScene.instantiate()
 			find_parent("BattleScreen").add_child(barrack)
 			barrack.global_position = PlayerData.selectedBuilding.global_position
-			barrack.global_position.y -= 40
+			barrack.global_position.y
+			barrack.global_position.x
 			find_parent("BuildingSelect").set_visible(false)
 			PlayerData.selectedBuilding.queue_free()
 			PlayerData.selectedBuilding = null

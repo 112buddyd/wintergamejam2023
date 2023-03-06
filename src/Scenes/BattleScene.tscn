@@ -181,23 +181,23 @@ position = Vector2(3507, 313)
 
 [node name="construction_site2" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(337, 414)
+position = Vector2(457, 478)
 
 [node name="construction_site3" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(130, 436)
+position = Vector2(250, 500)
 
 [node name="construction_site5" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(359, 234)
+position = Vector2(479, 298)
 
 [node name="construction_site4" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(270, 315)
+position = Vector2(390, 379)
 
 [node name="construction_site" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(169, 195)
+position = Vector2(289, 259)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 100

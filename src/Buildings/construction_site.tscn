@@ -6,7 +6,6 @@
 [node name="construction_site" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(165, 142)
 collision_layer = 4
 collision_mask = 0
 input_pickable = true
@@ -14,10 +13,14 @@ script = ExtResource("1_kb3vj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" groups=["player"]]
 z_index = -1
-position = Vector2(-77, -85)
+position = Vector2(7, 22)
 scale = Vector2(0.5, 0.5)
-polygon = PackedVector2Array(-12, 18, 136, -43, -12, -103, -161, -43)
+polygon = PackedVector2Array(-14, 64, 222, -40, -10, -142, -242, -44)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D"]
-scale = Vector2(0.5, 0.5)
+position = Vector2(8, 24)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_x35dt")
+
+[connection signal="mouse_entered" from="StaticBody2D" to="StaticBody2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="StaticBody2D" to="StaticBody2D" method="_on_mouse_exited"]

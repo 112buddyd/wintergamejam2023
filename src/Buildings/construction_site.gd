@@ -21,14 +21,9 @@ func _input(event):
 		else:
 			controlPanel.find_child("BuildingSelect").set_visible(true)
 			isBuildingGUIActive = true
-			PlayerData.selectedBuilding = find_child("CollisionPolygon2D")
+			PlayerData.selectedBuilding = self
 		get_viewport().set_input_as_handled()
 	
-func _mouse_enter():
-	isMouseInBounds = true
-	
-func _mouse_exit():
-	isMouseInBounds = false
 func take_hit(damage: int):
 	health -= damage
 	if health < 1:
@@ -37,3 +32,11 @@ func take_hit(damage: int):
 
 func destroy_barracks() -> void:
 	queue_free()
+
+
+func _on_mouse_entered():
+	isMouseInBounds = true
+
+
+func _on_mouse_exited():
+	isMouseInBounds = false
