@@ -196,7 +196,7 @@ position = Vector2(270, 315)
 
 [node name="construction_site" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
-position = Vector2(158, 208)
+position = Vector2(169, 195)
 
 [node name="UILayer" type="CanvasLayer" parent="."]
 layer = 100
