@@ -75,7 +75,6 @@ collision_mask = 8
 script = ExtResource("1_f3wot")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("2_ylsdp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -87,6 +86,7 @@ shape = SubResource("RectangleShape2D_vjcsw")
 [node name="Explosion" type="Area2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Explosion"]
+visible = false
 texture = ExtResource("3_i68kq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
@@ -97,3 +97,5 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 libraries = {
 "": SubResource("AnimationLibrary_gi2c1")
 }
+
+[connection signal="body_entered" from="Explosion" to="." method="_on_explosion_body_entered"]

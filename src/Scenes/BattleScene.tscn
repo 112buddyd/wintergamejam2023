@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bua7d15ah5flc"]
+[gd_scene load_steps=32 format=3 uid="uid://balmxaxv102e1"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
 [ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
 [ext_resource type="PackedScene" uid="uid://cctfe4dpco8hk" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
+[ext_resource type="PackedScene" uid="uid://dw3pbdagxlvkk" path="res://src/Military/tank.tscn" id="30_o08kb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -138,43 +139,43 @@ texture = ExtResource("2_kh086")
 position = Vector2(109, 256)
 
 [node name="Greyman" parent="." instance=ExtResource("25_13pcj")]
-position = Vector2(1296, 303)
+position = Vector2(1432, 307)
 
 [node name="SoldierBasic2" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(547, 293)
+position = Vector2(587, 294)
 
 [node name="SoldierBasic" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(546, 351)
+position = Vector2(586, 352)
 
 [node name="SoldierBasic3" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(550, 239)
+position = Vector2(590, 240)
 
 [node name="SoldierBasic4" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(541, 521)
+position = Vector2(606, 487)
 
 [node name="SoldierBasic5" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(545, 469)
+position = Vector2(585, 470)
 
 [node name="Greyman2" parent="." instance=ExtResource("25_13pcj")]
-position = Vector2(1309, 381)
+position = Vector2(1557, 390)
 
 [node name="Greyman3" parent="." instance=ExtResource("25_13pcj")]
-position = Vector2(1267, 209)
+position = Vector2(1515, 218)
 
 [node name="Greyman4" parent="." instance=ExtResource("25_13pcj")]
-position = Vector2(1328, 240)
+position = Vector2(1576, 249)
 
 [node name="SoldierBasic7" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(547, 201)
+position = Vector2(587, 202)
 
 [node name="Greyman5" parent="." instance=ExtResource("25_13pcj")]
-position = Vector2(1272, 446)
+position = Vector2(1520, 455)
 
 [node name="SoldierBasic6" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(548, 406)
+position = Vector2(588, 407)
 
 [node name="Greyman6" parent="." instance=ExtResource("25_13pcj")]
-position = Vector2(1113, 306)
+position = Vector2(1361, 315)
 
 [node name="AlienSpawner" type="Node2D" parent="."]
 position = Vector2(3507, 313)
@@ -208,3 +209,27 @@ transform = Transform2D(1, 0, 0, 1, 0, -10)
 offset_left = -2.0
 offset_right = -2.0
 offset_bottom = 524.0
+
+[node name="Tank" parent="." instance=ExtResource("30_o08kb")]
+position = Vector2(580, 348)
+
+[node name="Greyman7" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1641, 421)
+
+[node name="Greyman8" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1629, 367)
+
+[node name="Greyman9" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1828, 326)
+
+[node name="Greyman10" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1705, 337)
+
+[node name="Greyman11" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1701, 320)
+
+[node name="Greyman12" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1750, 327)
+
+[node name="Greyman13" parent="." instance=ExtResource("25_13pcj")]
+position = Vector2(1749, 295)

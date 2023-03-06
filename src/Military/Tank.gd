@@ -5,12 +5,13 @@ extends CharacterBody2D
 @export var damage_main := 30
 @export var shoot_distance_init_main : float = 600
 @export var health := 100
-@export var reload_time_main = 10.0
-@export var reload_time_secondary = 0.2
-@export var shoot_distance_init_secondary : float = 310
+@export var reload_time_main = 6.0
+@export var reload_time_secondary = 0.5
+@export var shoot_distance_init_secondary : float = 350
 @export var damage_secondary := 4
 
 const bullet_scene = preload("res://src/bullets/BSBullet.tscn")
+const tank_shell_scene = preload("res://src/bullets/TankShell.tscn")
 
 var close_enemy
 var timer_main = reload_time_main
@@ -30,7 +31,7 @@ func _process(_delta):
 	if timer_main <= reload_time_main:
 		timer_main += _delta
 	if timer_secondary <= reload_time_secondary:
-		timer_main += _delta
+		timer_secondary += _delta
 	if timer_main > reload_time_main and PlayerData.player_retreat == false:
 		var shoot_distance = shoot_distance_init_main
 		var all_enemy = get_tree().get_nodes_in_group("enemy")
@@ -45,7 +46,7 @@ func _process(_delta):
 		actor_velocity.x = resume_velocity
 	else:
 		actor_velocity.x = 0
-	if timer_main > reload_time_main and PlayerData.player_retreat == false:
+	if timer_secondary > reload_time_secondary and PlayerData.player_retreat == false:
 		var shoot_distance = shoot_distance_init_secondary
 		var all_enemy = get_tree().get_nodes_in_group("enemy")
 		for enemy in all_enemy:
@@ -79,11 +80,12 @@ func gm_shoot(close_enemy):
 	
 	
 func gm_shoot_shell(close_enemy):
-	var bullet = bullet_scene.instantiate()
+	var bullet = tank_shell_scene.instantiate()
 	get_tree().get_root().add_child(bullet)
 	bullet.position = $TankShoot.global_position
 	bullet.linear_velocity = close_enemy.global_position - bullet.position
 	bullet.damage = damage_main
+	bullet.enemy_position_x = close_enemy.global_position.x
 	
 
 func take_hit(damage: int):
