@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cdt4q23clb36y"]
+[gd_scene load_steps=30 format=3 uid="uid://balmxaxv102e1"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
@@ -145,46 +145,6 @@ position = Vector2(109, 256)
 position = Vector2(1296, 303)
 
 [node name="SoldierBasic2" parent="." instance=ExtResource("26_71dk0")]
-<<<<<<< HEAD
-position = Vector2(415, 279)
-speed = null
-damage = null
-shoot_distance_init = null
-health = null
-reload_time = null
-
-[node name="SoldierBasic" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(483, 322)
-speed = null
-damage = null
-shoot_distance_init = null
-health = null
-reload_time = null
-
-[node name="SoldierBasic3" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(451, 433)
-speed = null
-damage = null
-shoot_distance_init = null
-health = null
-reload_time = null
-
-[node name="SoldierBasic4" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(433, 193)
-speed = null
-damage = null
-shoot_distance_init = null
-health = null
-reload_time = null
-
-[node name="SoldierBasic5" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(511, 444)
-speed = null
-damage = null
-shoot_distance_init = null
-health = null
-reload_time = null
-=======
 position = Vector2(547, 293)
 
 [node name="SoldierBasic" parent="." instance=ExtResource("26_71dk0")]
@@ -198,7 +158,6 @@ position = Vector2(541, 521)
 
 [node name="SoldierBasic5" parent="." instance=ExtResource("26_71dk0")]
 position = Vector2(545, 469)
->>>>>>> c247547fe7b4813e6ede111d048bcf10dfe9a9bc
 
 [node name="Greyman2" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1309, 381)
@@ -210,31 +169,13 @@ position = Vector2(1267, 209)
 position = Vector2(1328, 240)
 
 [node name="SoldierBasic7" parent="." instance=ExtResource("26_71dk0")]
-<<<<<<< HEAD
-position = Vector2(497, 200)
-speed = null
-damage = null
-shoot_distance_init = null
-health = null
-reload_time = null
-=======
 position = Vector2(547, 201)
->>>>>>> c247547fe7b4813e6ede111d048bcf10dfe9a9bc
 
 [node name="Greyman5" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1272, 446)
 
 [node name="SoldierBasic6" parent="." instance=ExtResource("26_71dk0")]
-<<<<<<< HEAD
-position = Vector2(500, 371)
-speed = null
-damage = null
-shoot_distance_init = null
-health = null
-reload_time = null
-=======
 position = Vector2(548, 406)
->>>>>>> c247547fe7b4813e6ede111d048bcf10dfe9a9bc
 
 [node name="Greyman6" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1113, 306)

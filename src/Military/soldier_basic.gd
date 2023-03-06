@@ -40,8 +40,8 @@ func _process(_delta):
 				
 	else:
 		actor_velocity.x = 0
-	if player_data.player_hold == true:
-		actor_velocity.x = 0
+	#if player_data.player_hold == true:
+		#actor_velocity.x = 0
 	set_velocity(actor_velocity)
 	move_and_slide()
 	
