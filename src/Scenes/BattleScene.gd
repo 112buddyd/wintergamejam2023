@@ -27,5 +27,3 @@ func level_one(delta): # First level, can use as a template
 	else:
 		level_one_cooldown_timer -= delta
 		
-
-

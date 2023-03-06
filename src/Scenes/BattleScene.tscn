@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b86hhelb34xvd"]
+[gd_scene load_steps=31 format=3 uid="uid://b86hhelb34xvd"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
@@ -29,23 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
 [ext_resource type="PackedScene" uid="uid://cctfe4dpco8hk" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
 [ext_resource type="PackedScene" uid="uid://dw3pbdagxlvkk" path="res://src/Military/tank.tscn" id="30_o08kb"]
-
-[sub_resource type="GDScript" id="GDScript_ou54l"]
-script/source = "extends ParallaxBackground
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-func _input(event):
-	if event.is_action(\"select\"):
-		get_parent().find_child(\"ControlPanel\").find_child(\"HBoxContainer\").set_visible(false)
-"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -113,7 +96,6 @@ metadata/_edit_horizontal_guides_ = [648.0, 138.0, 138.0]
 position = Vector2(695, 374)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-script = SubResource("GDScript_ou54l")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(1, 0)
