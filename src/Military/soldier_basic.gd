@@ -23,7 +23,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if timer <= 2.0:
+	if timer <= reload_time:
 		timer += _delta
 	if timer > reload_time and PlayerData.player_retreat == false:
 		var shoot_distance = shoot_distance_init
