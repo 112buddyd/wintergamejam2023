@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3l3a6o3sl0mg"]
+
+[ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_5wqt0"]
+[ext_resource type="Script" path="res://src/Scenes/control_panel.gd" id="2_k782q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrlp"]
+bg_color = Color(0, 0.517647, 0.611765, 1)
+
+[node name="ControlPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 524.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5wqt0")
+script = ExtResource("2_k782q")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1154.0
+offset_bottom = 133.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 1151.0
+offset_bottom = 30.0
+mouse_filter = 0
+
+[node name="TextEdit" type="TextEdit" parent="Panel/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 0
+theme_override_colors/background_color = Color(0, 0.517647, 0.4, 1)
+theme_override_colors/font_readonly_color = Color(0, 1, 1, 1)
+text = "Money:		Power:		Military Strength:"
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+scroll_past_end_of_file = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 33.0
+offset_right = 1149.0
+offset_bottom = 124.0
+mouse_filter = 0
+theme_override_constants/separation = 0
+
+[node name="TextEdit" type="TextEdit" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/background_color = Color(0, 0.517647, 0.611765, 1)
+theme_override_colors/font_placeholder_color = Color(0, 1, 1, 1)
+placeholder_text = "Select a building to construct."
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+
+[node name="ItemList" type="ItemList" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_constants/h_separation = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_hdrlp")
+item_count = 4
+max_columns = 4
+same_column_width = true
+item_0/text = "Barracks"
+item_1/text = "Hospital"
+item_2/text = "Bank"
+item_3/text = "Power Plant"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

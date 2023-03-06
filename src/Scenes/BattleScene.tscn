@@ -1,15 +1,16 @@
-[gd_scene load_steps=30 format=3 uid="uid://balmxaxv102e1"]
+[gd_scene load_steps=31 format=3 uid="uid://bua7d15ah5flc"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
 [ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="2_kh086"]
+[ext_resource type="Script" path="res://src/Scenes/ParallaxBackground.gd" id="3_2b1tm"]
 [ext_resource type="Texture2D" uid="uid://de05dqexhkt8v" path="res://assets/Backgrounds/DogfightAnimation/frame0000.png" id="3_7baca"]
 [ext_resource type="Script" path="res://src/Scenes/CloudLayer.gd" id="3_f73sk"]
 [ext_resource type="Texture2D" uid="uid://ceias11glwken" path="res://assets/Backgrounds/backgroundMountainParalax.png" id="3_fo81n"]
 [ext_resource type="Script" path="res://src/Scenes/WillSmiff.gd" id="3_hmqi1"]
 [ext_resource type="Texture2D" uid="uid://b6uw6r5wttf8k" path="res://assets/Backgrounds/clouds.png" id="3_xgruf"]
 [ext_resource type="Texture2D" uid="uid://dh50gsyxj2nu3" path="res://assets/Backgrounds/DogfightAnimation/frame0001.png" id="4_4k4iu"]
-[ext_resource type="PackedScene" uid="uid://d3l3a6o3sl0mg" path="res://src/Camera/control_panel.tscn" id="4_da5fy"]
+[ext_resource type="PackedScene" uid="uid://d3l3a6o3sl0mg" path="res://src/Scenes/control_panel.tscn" id="4_da5fy"]
 [ext_resource type="Texture2D" uid="uid://geq46t7bektd" path="res://assets/Backgrounds/DogfightAnimation/frame0002.png" id="5_ro5no"]
 [ext_resource type="Texture2D" uid="uid://dvgkogo41up1l" path="res://assets/Backgrounds/DogfightAnimation/frame0003.png" id="6_rrqev"]
 [ext_resource type="Texture2D" uid="uid://b82aros4yvypu" path="res://assets/Backgrounds/DogfightAnimation/frame0004.png" id="7_h01sv"]
@@ -27,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
 [ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
 [ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
-[ext_resource type="PackedScene" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
+[ext_resource type="PackedScene" uid="uid://cctfe4dpco8hk" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -91,16 +92,11 @@ script = ExtResource("1_a60bb")
 metadata/_edit_vertical_guides_ = [1150.0, 1150.0, 1152.0, 576.0, 576.0, 576.0, 3500.0]
 metadata/_edit_horizontal_guides_ = [648.0, 138.0, 138.0]
 
-[node name="UserInterface" type="CanvasLayer" parent="."]
-layer = 100
-
-[node name="ControlPanel" parent="UserInterface" instance=ExtResource("4_da5fy")]
-mouse_filter = 1
-
 [node name="Camera" parent="." instance=ExtResource("2_0sv4s")]
 position = Vector2(695, 374)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("3_2b1tm")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(1, 0)
@@ -202,3 +198,13 @@ position = Vector2(270, 315)
 [node name="construction_site" parent="." instance=ExtResource("28_xj6oo")]
 z_index = -1
 position = Vector2(158, 208)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+offset = Vector2(0, -10)
+transform = Transform2D(1, 0, 0, 1, 0, -10)
+
+[node name="ControlPanel" parent="CanvasLayer" instance=ExtResource("4_da5fy")]
+offset_left = -2.0
+offset_right = -2.0
+offset_bottom = 524.0
