@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cw3ha51vmpgop"]
+[gd_scene load_steps=13 format=3 uid="uid://cw3ha51vmpgop"]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_6g3k6"]
 [ext_resource type="Script" path="res://src/GUI/HUD.gd" id="2_ugg5w"]
@@ -34,8 +34,12 @@ bg_color = Color(0.0705882, 0.776471, 0.494118, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t05kg"]
 bg_color = Color(0.0705882, 0.776471, 0.494118, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajgth"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo5x"]
 bg_color = Color(0, 0.517647, 0.611765, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xiga0"]
+font_size = 20
+font_color = Color(0, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrlp"]
 bg_color = Color(0, 0.517647, 0.611765, 1)
@@ -95,7 +99,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_t05kg")
 text = "        Score:        "
 
 [node name="BuildingSelect" type="HBoxContainer" parent="Panel"]
-visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = 33.0
@@ -109,9 +112,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.61
 theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ajgth")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ebo5x")
 text = "Select a building to construct."
+label_settings = SubResource("LabelSettings_xiga0")
 vertical_alignment = 1
 
 [node name="ItemList" type="ItemList" parent="Panel/BuildingSelect"]

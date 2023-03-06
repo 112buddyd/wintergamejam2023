@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bvvfxr1si2pka"]
+[gd_scene load_steps=31 format=3 uid="uid://c2042ub5ljgfq"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://cgpgumhx6fn5c" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
 [ext_resource type="PackedScene" uid="uid://b3s381fo0eb6b" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
 [ext_resource type="PackedScene" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
-[ext_resource type="PackedScene" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
+[ext_resource type="PackedScene" uid="uid://ne1gpm1trb2h" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
 [ext_resource type="PackedScene" path="res://src/Military/tank.tscn" id="30_o08kb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
@@ -204,9 +204,6 @@ offset = Vector2(0, -10)
 transform = Transform2D(1, 0, 0, 1, 0, -10)
 
 [node name="ControlPanel" parent="UILayer" instance=ExtResource("4_da5fy")]
-offset_left = -2.0
-offset_right = -2.0
-offset_bottom = 524.0
 
 [node name="Tank" parent="." instance=ExtResource("30_o08kb")]
 position = Vector2(580, 348)

@@ -31,10 +31,7 @@ func _on_item_activated(index):
 		else:
 			var messageLabel = get_parent().find_child("Message")
 			messageLabel.set_text("Cannot Afford! Please select another choice.")
-			var labelSettings = LabelSettings.new()
-			labelSettings.set_font_size(16)
-			labelSettings.set_font_color(Color(0,255,255,255))
-			messageLabel.set_label_settings(labelSettings)
+			messageLabel.get_label_settings().set_font_size(16)
 			
 
 		
