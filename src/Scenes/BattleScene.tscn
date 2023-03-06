@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
 [ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
 [ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
-[ext_resource type="PackedScene" uid="uid://cctfe4dpco8hk" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
+[ext_resource type="PackedScene" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -145,18 +145,43 @@ position = Vector2(1296, 303)
 
 [node name="SoldierBasic2" parent="." instance=ExtResource("26_71dk0")]
 position = Vector2(415, 279)
+speed = null
+damage = null
+shoot_distance_init = null
+health = null
+reload_time = null
 
 [node name="SoldierBasic" parent="." instance=ExtResource("26_71dk0")]
 position = Vector2(483, 322)
+speed = null
+damage = null
+shoot_distance_init = null
+health = null
+reload_time = null
 
 [node name="SoldierBasic3" parent="." instance=ExtResource("26_71dk0")]
 position = Vector2(451, 433)
+speed = null
+damage = null
+shoot_distance_init = null
+health = null
+reload_time = null
 
 [node name="SoldierBasic4" parent="." instance=ExtResource("26_71dk0")]
 position = Vector2(433, 193)
+speed = null
+damage = null
+shoot_distance_init = null
+health = null
+reload_time = null
 
 [node name="SoldierBasic5" parent="." instance=ExtResource("26_71dk0")]
 position = Vector2(511, 444)
+speed = null
+damage = null
+shoot_distance_init = null
+health = null
+reload_time = null
 
 [node name="Greyman2" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1309, 381)
@@ -169,12 +194,22 @@ position = Vector2(1328, 240)
 
 [node name="SoldierBasic7" parent="." instance=ExtResource("26_71dk0")]
 position = Vector2(497, 200)
+speed = null
+damage = null
+shoot_distance_init = null
+health = null
+reload_time = null
 
 [node name="Greyman5" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1272, 446)
 
 [node name="SoldierBasic6" parent="." instance=ExtResource("26_71dk0")]
 position = Vector2(500, 371)
+speed = null
+damage = null
+shoot_distance_init = null
+health = null
+reload_time = null
 
 [node name="Greyman6" parent="." instance=ExtResource("25_13pcj")]
 position = Vector2(1113, 306)
