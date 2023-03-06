@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=31 format=3 uid="uid://bgrvy3xs6auyj"]
-=======
-[gd_scene load_steps=32 format=3 uid="uid://balmxaxv102e1"]
->>>>>>> d73911c57eb36400f4a9304ad0fbc3a0cfcb4006
+[gd_scene load_steps=32 format=3 uid="uid://b86hhelb34xvd"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]

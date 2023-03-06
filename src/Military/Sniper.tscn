@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://chmfrp64nw0cx"]
+
+[ext_resource type="Script" path="res://src/Military/Sniper.gd" id="1_6oalm"]
+[ext_resource type="Texture2D" uid="uid://bhvewh20kyfj0" path="res://assets/Textures/Actors/sniper.png" id="2_3yvni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nhqf"]
+size = Vector2(40, 45)
+
+[node name="Sniper" type="CharacterBody2D" groups=["player"]]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_6oalm")
+
+[node name="SniperSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_3yvni")
+
+[node name="SniperCollision" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_8nhqf")
+
+[node name="SniperFire" type="Node2D" parent="."]
+position = Vector2(22, -2)
