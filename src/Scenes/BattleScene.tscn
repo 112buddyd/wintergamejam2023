@@ -199,12 +199,12 @@ position = Vector2(270, 315)
 z_index = -1
 position = Vector2(158, 208)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UILayer" type="CanvasLayer" parent="."]
 layer = 100
 offset = Vector2(0, -10)
 transform = Transform2D(1, 0, 0, 1, 0, -10)
 
-[node name="ControlPanel" parent="CanvasLayer" instance=ExtResource("4_da5fy")]
+[node name="ControlPanel" parent="UILayer" instance=ExtResource("4_da5fy")]
 offset_left = -2.0
 offset_right = -2.0
 offset_bottom = 524.0
