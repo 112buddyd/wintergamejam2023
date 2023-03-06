@@ -55,6 +55,5 @@ func gm_shoot(close_enemy):
 
 func take_hit(damage: int):
 	health -= damage
-	print(str(health))
 	if health < 1:
 		queue_free()

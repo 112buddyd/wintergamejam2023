@@ -1,12 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://cctfe4dpco8hk"]
+[gd_scene load_steps=3 format=3 uid="uid://cctfe4dpco8hk"]
 
+[ext_resource type="Script" path="res://src/Buildings/construction_site.gd" id="1_kb3vj"]
 [ext_resource type="Texture2D" uid="uid://e2csdh4joa75" path="res://assets/Textures/construction_site.png" id="1_x35dt"]
 
 [node name="construction_site" type="Node2D"]
 
-[node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(0.5, 0.5)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(165, 142)
+collision_layer = 4
+collision_mask = 0
+input_pickable = true
+script = ExtResource("1_kb3vj")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(47, -11)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+z_index = -1
+polygon = PackedVector2Array(-12, 18, 136, -43, -12, -103, -161, -43)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionPolygon2D"]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_x35dt")

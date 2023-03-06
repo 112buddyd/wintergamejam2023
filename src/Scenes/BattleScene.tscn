@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cdt4q23clb36y"]
+[gd_scene load_steps=30 format=3 uid="uid://cdt4q23clb36y"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
 [ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
 [ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
+[ext_resource type="PackedScene" uid="uid://cctfe4dpco8hk" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -93,6 +94,7 @@ metadata/_edit_horizontal_guides_ = [648.0, 138.0, 138.0]
 layer = 100
 
 [node name="ControlPanel" parent="UserInterface" instance=ExtResource("4_da5fy")]
+mouse_filter = 1
 
 [node name="Camera" parent="." instance=ExtResource("2_0sv4s")]
 position = Vector2(576, 324)
@@ -179,3 +181,23 @@ position = Vector2(1113, 306)
 
 [node name="AlienSpawner" type="Node2D" parent="."]
 position = Vector2(3507, 313)
+
+[node name="construction_site2" parent="." instance=ExtResource("28_xj6oo")]
+z_index = -1
+position = Vector2(443, 240)
+
+[node name="construction_site3" parent="." instance=ExtResource("28_xj6oo")]
+z_index = -1
+position = Vector2(252, 340)
+
+[node name="construction_site5" parent="." instance=ExtResource("28_xj6oo")]
+z_index = -1
+position = Vector2(614, 107)
+
+[node name="construction_site4" parent="." instance=ExtResource("28_xj6oo")]
+z_index = -1
+position = Vector2(666, 338)
+
+[node name="construction_site" parent="." instance=ExtResource("28_xj6oo")]
+z_index = -1
+position = Vector2(254, 113)

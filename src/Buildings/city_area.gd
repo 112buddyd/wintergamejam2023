@@ -15,7 +15,6 @@ func _process(delta):
 	
 func take_hit(damage: int):
 	health -= damage
-	print(str(health))
 	if health < 1:
 		city_destroy()
 

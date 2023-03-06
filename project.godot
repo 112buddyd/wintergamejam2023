@@ -43,7 +43,12 @@ move_camera_left={
 }
 move_camera_with_mouse={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(108, 21),"global_position":Vector2(112, 64),"factor":1.0,"button_index":1,"pressed":true,"double_click":false,"script":null)
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(85, 22),"global_position":Vector2(89, 65),"factor":1.0,"button_index":2,"pressed":true,"double_click":false,"script":null)
+]
+}
+select={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(81, 11),"global_position":Vector2(85, 54),"factor":1.0,"button_index":1,"pressed":true,"double_click":false,"script":null)
 ]
 }
 

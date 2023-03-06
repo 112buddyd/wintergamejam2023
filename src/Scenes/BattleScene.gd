@@ -11,7 +11,7 @@ func _process(delta): # When the timer hits thresholds waves start to appear
 	timer += delta
 	if timer > 94:
 		level_one(delta)
-	print(timer)
+
 	
 func spawn_greyman(spawn_amount: int): # Spawns greymen at random locations
 	for spawn in spawn_amount:
