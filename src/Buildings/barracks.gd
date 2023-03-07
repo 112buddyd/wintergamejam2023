@@ -24,6 +24,8 @@ func _process(delta):
 		if level >= 2:
 			spawn_soldier()
 			spawn_tank()
+		else:
+			spawn_soldier()
 		timer = 0
 	
 	
