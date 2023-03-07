@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg33fk5qyhn7t"]
+[gd_scene load_steps=3 format=3 uid="uid://dg33fk5qyhn7t"]
 
 [ext_resource type="Script" path="res://src/Buildings/barracks.gd" id="1_6kmo0"]
 [ext_resource type="Texture2D" uid="uid://twvb8n6vxa7h" path="res://assets/Textures/Barracks.png" id="2_e80w4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ak18"]
-bg_color = Color(0.886275, 0, 0.176471, 1)
 
 [node name="Barracks" type="StaticBody2D" groups=["player"]]
 collision_layer = 4
@@ -25,7 +22,6 @@ offset_left = -34.0
 offset_top = -97.0
 offset_right = 34.0
 offset_bottom = -87.0
-theme_override_styles/background = SubResource("StyleBoxFlat_4ak18")
 max_value = 1.0
 value = 1.0
 show_percentage = false
