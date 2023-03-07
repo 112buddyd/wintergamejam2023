@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b77myhn3qtium"]
+
+[ext_resource type="Texture2D" uid="uid://6wvspc32ejlq" path="res://assets/Textures/Bank.png" id="1_a66b7"]
+
+[node name="bank" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["player"]]
+scale = Vector2(0.25, 0.25)
+collision_layer = 4
+collision_mask = 0
+input_pickable = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-10, -74)
+scale = Vector2(3.33876, 0.31227)
+polygon = PackedVector2Array(35.3425, -627.662, 90.7523, -80.0589, 91.6509, -16.0118, 69.1874, 67.2495, 69.4869, 422.711, 92.2499, 525.187, 90.7523, 557.21, 98.5396, 592.436, 98.5396, 672.495, 1.49756, 1088.8, -97.3416, 653.281, -97.0421, 598.841, -91.6509, 566.817, -91.6509, 505.972, -70.9845, 422.711, -70.086, 51.2377, -89.8538, -28.8212, -89.2548, -89.666, -39.5357, -268.998)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-11, -73)
+texture = ExtResource("1_a66b7")
