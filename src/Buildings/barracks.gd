@@ -7,6 +7,7 @@ var isMouseInBounds = false
 var timer = 0; 
 const COST = 100
 var isBuildingGUIActive = false
+var parent_building = null
 
 const tankScene = preload("res://src/Military/tank.tscn")
 const soldierScene = preload("res://src/Military/soldier_basic.tscn")
@@ -47,6 +48,7 @@ func spawn_tank():
 	tank.global_position.y = randf_range(158, 470)
 	
 func destroy_barracks() -> void:
+	parent_building.unhide_building()
 	queue_free()
 	
 func level_up():

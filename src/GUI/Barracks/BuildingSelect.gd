@@ -25,7 +25,14 @@ func _on_item_activated(index):
 			var barrack = barracksScene.instantiate()
 			find_parent("BattleScreen").add_child(barrack)
 			barrack.global_position = PlayerData.selectedBuilding.global_position
+<<<<<<< Updated upstream
+=======
+			barrack.global_position.y
+			barrack.global_position.x
+			barrack.parent_building = PlayerData.selectedBuilding
+>>>>>>> Stashed changes
 			find_parent("BuildingSelect").set_visible(false)
+			PlayerData.selectedBuilding.hide_building()
 			PlayerData.selectedBuilding = null
 		else:
 			cannotAffordMessage()

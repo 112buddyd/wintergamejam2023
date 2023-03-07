@@ -25,10 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://ceias11glwken" path="res://assets/Backgrounds/backgroundMountainParalax.png" id="22_luc2h"]
 [ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="23_ia7ri"]
 [ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
-[ext_resource type="PackedScene" uid="uid://b3s381fo0eb6b" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
-[ext_resource type="PackedScene" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
+[ext_resource type="PackedScene" uid="uid://dbt1kx7iqqpec" path="res://src/Enemies/Greyman.tscn" id="25_13pcj"]
+[ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
 [ext_resource type="PackedScene" uid="uid://cctfe4dpco8hk" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
-[ext_resource type="PackedScene" path="res://src/Military/tank.tscn" id="30_o08kb"]
+[ext_resource type="PackedScene" uid="uid://dw3pbdagxlvkk" path="res://src/Military/tank.tscn" id="30_o08kb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{

@@ -4,7 +4,7 @@ var isBuildingGUIActive = false;
 @export var health := 100 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,6 +28,15 @@ func take_hit(damage: int):
 	health -= damage
 	if health < 1:
 		destroy_barracks()
+
+
+func hide_building():
+	$Sprite2D.visible = false
+	$CollisionPolygon2D.disabled = true
+	
+func unhide_building():
+	$Sprite2D.visible = true
+	$CollisionPolygon2D.disabled = false
 
 
 func destroy_barracks() -> void:
