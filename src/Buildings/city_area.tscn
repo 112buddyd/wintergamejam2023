@@ -18,3 +18,12 @@ texture = ExtResource("2_6uw2u")
 position = Vector2(-50, -101)
 scale = Vector2(0.498033, 0.496394)
 polygon = PackedVector2Array(274, 178, 154, 132, 154, 60, 74, 34, 32, 52, -12, 32, -8, 328, 32, 310, 112, 344, 274, 274)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -22.0
+offset_top = -99.0
+offset_right = 46.0
+offset_bottom = -89.0
+max_value = 1.0
+value = 1.0
+show_percentage = false

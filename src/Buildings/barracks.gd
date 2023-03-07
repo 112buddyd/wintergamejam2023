@@ -19,6 +19,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	get_node("ProgressBar").set_value(health/500)
 	timer += delta
 	if timer >= (baseSpawnRate / level):
 		if level >= 2:
