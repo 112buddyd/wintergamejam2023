@@ -87,17 +87,16 @@ mouse_filter = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-size_flags_stretch_ratio = 0.7
+size_flags_stretch_ratio = 0.5
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ebo5x")
-text = "Next Level Unlocks Unit: Tank"
+text = "Level: "
 label_settings = SubResource("LabelSettings_xiga0")
-vertical_alignment = 1
 
 [node name="ItemList" type="ItemList" parent="Panel/BarracksSelect"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.6
+size_flags_stretch_ratio = 0.5
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_constants/h_separation = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2dl0")

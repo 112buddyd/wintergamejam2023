@@ -16,6 +16,7 @@ func _on_item_activated(index):
 		var barrack = PlayerData.selectedBuilding
 		if PlayerData.money >= barracksScript.COST:
 			barrack.level_up()
+			barrack.isBuildingGUIActive = false
 			get_parent().set_visible(false)
 		else:
 			get_parent().find_child("Message").set_text("Can't afford!")

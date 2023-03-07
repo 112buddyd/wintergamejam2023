@@ -53,13 +53,14 @@ func level_up():
 	
 func _input(event):
 	if event.is_action_released("select") && isMouseInBounds:
-		var controlPanel = get_parent().find_child("ControlPanel")
+		var barracksSelect = get_parent().find_child("ControlPanel").find_child("BarracksSelect")
 		if isBuildingGUIActive:
-			controlPanel.find_child("BarracksSelect").set_visible(false)
+			barracksSelect.set_visible(false)
 			isBuildingGUIActive = false
 			PlayerData.selectedBuilding = null
 		else:
-			controlPanel.find_child("BarracksSelect").set_visible(true)
+			barracksSelect.set_visible(true)
+			barracksSelect.find_child("Message").set_text("Level " + str(level))
 			isBuildingGUIActive = true
 			PlayerData.selectedBuilding = self
 		get_viewport().set_input_as_handled()
