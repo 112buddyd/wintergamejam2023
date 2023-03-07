@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3ch8lun7ir73"]
+[gd_scene load_steps=15 format=3 uid="uid://cs2j3coqyvbm1"]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_6g3k6"]
 [ext_resource type="Script" path="res://src/GUI/Barracks/BarracksSelect.gd" id="2_1pj4s"]

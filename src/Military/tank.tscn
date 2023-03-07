@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://dw3pbdagxlvkk"]
 
 [ext_resource type="Script" path="res://src/Military/Tank.gd" id="1_u4btt"]
 [ext_resource type="Texture2D" uid="uid://bsyhunq2b41on" path="res://assets/Textures/Actors/Tankman.png" id="2_rntkr"]

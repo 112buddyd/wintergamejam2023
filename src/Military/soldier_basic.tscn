@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://c7yli1jw4mq2u"]
 
 [ext_resource type="Texture2D" uid="uid://k032oiah6hrt" path="res://assets/Textures/Actors/BasicSoldier.png" id="1_injc8"]
 [ext_resource type="Script" path="res://src/Military/soldier_basic.gd" id="1_jlfhi"]
