@@ -1,5 +1,5 @@
 extends ItemList
-
+var barracksScript = preload("res://src/Buildings/barracks.gd")
 var isMouseInBounds = false;
 const barracksScene = preload("res://src/buildings/barracks.tscn")
 
@@ -17,7 +17,6 @@ func _process(delta):
 
 
 func _on_item_activated(index):
-	var barracksScript = load("res://src/Buildings/barracks.gd")
 	if index == 0:
 		if PlayerData.money >= barracksScript.COST:
 			PlayerData.money -= barracksScript.COST

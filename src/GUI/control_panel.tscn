@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3]
+[gd_scene load_steps=15 format=3 uid="uid://c3ch8lun7ir73"]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_6g3k6"]
+[ext_resource type="Script" path="res://src/GUI/Barracks/BarracksSelect.gd" id="2_1pj4s"]
 [ext_resource type="Script" path="res://src/GUI/HUD.gd" id="2_ugg5w"]
-[ext_resource type="Script" path="res://src/GUI/Barracks/ItemList.gd" id="3_dfu05"]
+[ext_resource type="Script" path="res://src/GUI/Barracks/BuildingSelect.gd" id="4_rlalp"]
 
 [sub_resource type="GDScript" id="GDScript_t23yr"]
 script/source = "extends Control
@@ -18,7 +19,26 @@ func _process(delta):
 	pass
 	
 
+
+
+func _on_item_list_item_activated(index):
+	if index == 0:
+		var barracksScript = load(\"res://src/Buildings/barracks.gd\")
+		if PlayerData.money >= barracksScript.COST:
+			var barrack = PlayerData.selectedBuilding
+			barrack.level_up()
+			barrack.isGUI
+			
 "
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo5x"]
+bg_color = Color(0, 0.517647, 0.611765, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xiga0"]
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2dl0"]
+bg_color = Color(0, 0.517647, 0.611765, 1)
 
 [sub_resource type="Theme" id="Theme_2s6e0"]
 
@@ -33,13 +53,6 @@ bg_color = Color(0.0705882, 0.776471, 0.494118, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t05kg"]
 bg_color = Color(0.0705882, 0.776471, 0.494118, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo5x"]
-bg_color = Color(0, 0.517647, 0.611765, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_xiga0"]
-font_size = 20
-font_color = Color(0, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrlp"]
 bg_color = Color(0, 0.517647, 0.611765, 1)
@@ -60,6 +73,53 @@ layout_mode = 0
 offset_left = 1.0
 offset_right = 1154.0
 offset_bottom = 133.0
+
+[node name="BarracksSelect" type="HBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 2
+offset_left = 2.0
+offset_top = 36.0
+offset_right = 1149.0
+offset_bottom = 127.0
+mouse_filter = 0
+
+[node name="Message" type="Label" parent="Panel/BarracksSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.7
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ebo5x")
+text = "Next Level Unlocks Unit: Tank"
+label_settings = SubResource("LabelSettings_xiga0")
+vertical_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="Panel/BarracksSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_constants/h_separation = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b2dl0")
+item_count = 1
+max_columns = 0
+item_0/text = "Upgrade ($100)"
+script = ExtResource("2_1pj4s")
+
+[node name="TextEdit2" type="TextEdit" parent="Panel/BarracksSelect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/background_color = Color(0, 0.517647, 0.611765, 1)
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+minimap_width = 100
 
 [node name="HUD" type="HBoxContainer" parent="Panel"]
 layout_mode = 0
@@ -99,6 +159,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_t05kg")
 text = "        Score:        "
 
 [node name="BuildingSelect" type="HBoxContainer" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = 33.0
@@ -132,7 +193,7 @@ item_0/text = "Barracks ($100)"
 item_1/text = "Hospital ($100)"
 item_2/text = "Bank ($500)"
 item_3/text = "Power Plant ($250)"
-script = ExtResource("3_dfu05")
+script = ExtResource("4_rlalp")
 
 [node name="TextEdit2" type="TextEdit" parent="Panel/BuildingSelect"]
 layout_mode = 2
@@ -149,4 +210,5 @@ virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 minimap_width = 100
 
+[connection signal="item_activated" from="Panel/BarracksSelect/ItemList" to="Panel/BarracksSelect/ItemList" method="_on_item_activated"]
 [connection signal="item_activated" from="Panel/BuildingSelect/ItemList" to="Panel/BuildingSelect/ItemList" method="_on_item_activated"]
