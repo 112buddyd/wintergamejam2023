@@ -19,6 +19,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	get_node("ProgressBar").set_value(health/500)
 	timer += delta
 	if timer >= (baseSpawnRate / level):
 		if level >= 2:
@@ -37,12 +38,12 @@ func take_hit(damage: int):
 func spawn_soldier():
 	var soldier = soldierScene.instantiate()
 	get_tree().get_root().add_child(soldier)
-	soldier.global_position.x = 0
+	soldier.global_position.x = 420
 	soldier.global_position.y = randf_range(158, 470)
 func spawn_tank():
 	var tank = tankScene.instantiate()
 	get_tree().get_root().add_child(tank)
-	tank.global_position.x = 0
+	tank.global_position.x = 420
 	tank.global_position.y = randf_range(158, 470)
 	
 func destroy_barracks() -> void:

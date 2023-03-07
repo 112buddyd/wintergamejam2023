@@ -26,7 +26,6 @@ func _on_item_activated(index):
 			barrack.global_position.y
 			barrack.global_position.x
 			find_parent("BuildingSelect").set_visible(false)
-			PlayerData.selectedBuilding.queue_free()
 			PlayerData.selectedBuilding = null
 		else:
 			var messageLabel = get_parent().find_child("Message")
