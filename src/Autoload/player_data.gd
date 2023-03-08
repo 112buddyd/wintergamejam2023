@@ -11,12 +11,13 @@ var queue_repeat = false
 var score = 10
 var money = 10000
 var energy = 50
-var unobtainium = 50
 var militaryPower = 10
+var timer = 0.0
 
 var selectedBuilding = null
 
 func _process(delta):
+	timer += delta
 	if Input.is_action_just_pressed("go"):
 		player_hold = false
 		player_attack = true
@@ -30,4 +31,12 @@ func _process(delta):
 		player_attack = false
 		player_retreat = false
 	if Input.is_action_just_pressed("repeat"):
-		PlayerData.queue_repeat != queue_repeat
+		if queue_repeat:
+			queue_repeat = false
+		else:
+			queue_repeat = true
+	if timer >= 8:
+		score += 3
+		money += 3
+		energy += 3
+		timer = 0

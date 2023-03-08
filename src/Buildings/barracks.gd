@@ -4,7 +4,10 @@ extends StaticBody2D
 var isMouseInBounds = false
 var isBuildingGUIActive = false
 var parent_building = null
-const COST = 100
+const COST = 40
+const soldier_COST = [10,0,1]
+const tank_COST = [25,10,1]
+var repeat = PlayerData.queue_repeat
 
 const tankScene = preload("res://src/Military/tank.tscn")
 const soldierScene = preload("res://src/Military/soldier_basic.tscn")
@@ -18,6 +21,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_node("ProgressBar").set_value(health/500)
+	repeat = PlayerData.queue_repeat
 	
 	
 	
@@ -27,22 +31,34 @@ func take_hit(damage: int):
 		destroy_barracks()
 		
 func spawn_soldier_timer():
-	print("activate")
+	PlayerData.money -= soldier_COST[0]
+	PlayerData.energy -= soldier_COST[1]
+	PlayerData.score -= soldier_COST[2]
 	for child in get_children():
 		if child is Timer:
 			if child.get_time_left() != 0:
 				return
-	$SoldierTimer.set_one_shot(PlayerData.queue_repeat)
+	$SoldierTimer.set_one_shot(false) 
+	if PlayerData.queue_repeat == true:
+		$SoldierTimer.set_one_shot(false)	
+	else:
+		$SoldierTimer.set_one_shot(true)
 	$SoldierTimer.start(3)
 	print(str($SoldierTimer.is_one_shot()))
 	
 	
 func spawn_tank_timer():
+	PlayerData.money -= tank_COST[0]
+	PlayerData.energy -= tank_COST[1]
+	PlayerData.score -= tank_COST[2]
 	for child in get_children():
 		if child is Timer:
 			if child.get_time_left() != 0:
 				return
-	$TankTimer.set_one_shot(PlayerData.queue_repeat)
+	if PlayerData.queue_repeat == true:
+		$TankTimer.set_one_shot(false)	
+	else:
+		$TankTimer.set_one_shot(true)
 	$TankTimer.start(5)
 	
 		
@@ -53,13 +69,26 @@ func timers_cancel():
 func spawn_soldier():
 	var soldier = soldierScene.instantiate()
 	get_tree().get_root().add_child(soldier)
-	soldier.global_position.x = 420
-	soldier.global_position.y = randf_range(158, 470)
+	soldier.global_position.x = 560
+	soldier.global_position.y = randf_range(220, 450)
+	if $TankTimer.is_one_shot() == false and PlayerData.money >= tank_COST[0] and PlayerData.energy >= tank_COST[1] and PlayerData.score >= tank_COST[2]:
+		PlayerData.money -= soldier_COST[0]
+		PlayerData.energy -= soldier_COST[1]
+		PlayerData.score -= soldier_COST[2]
+	else:
+		$TankTimer.stop()
+	
 func spawn_tank():
 	var tank = tankScene.instantiate()
 	get_tree().get_root().add_child(tank)
-	tank.global_position.x = 420
-	tank.global_position.y = randf_range(158, 470)
+	tank.global_position.x = 560
+	tank.global_position.y = randf_range(220, 450)
+	if $TankTimer.is_one_shot() == false and PlayerData.money >= tank_COST[0] and PlayerData.energy >= tank_COST[1] and PlayerData.score >= tank_COST[2]:
+		PlayerData.money -= tank_COST[0]
+		PlayerData.energy -= tank_COST[1]
+		PlayerData.score -= tank_COST[2]
+	else:
+		$TankTimer.stop()
 	
 func destroy_barracks() -> void:
 	parent_building.unhide_building()

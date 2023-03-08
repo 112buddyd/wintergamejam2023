@@ -15,13 +15,13 @@ func _process(delta):
 func _on_item_activated(index):
 	if index == 0:
 		barrack = PlayerData.selectedBuilding
-		if PlayerData.money >= barracksScript.COST:
+		if PlayerData.money >= barracksScript.soldier_COST[0] and PlayerData.energy >= barracksScript.soldier_COST[1] and PlayerData.score >= barracksScript.soldier_COST[2]:
 			barrack.spawn_soldier_timer()
 		else:
 			get_parent().find_child("Message").set_text("Can't afford!")
 	if index == 1:
 		barrack = PlayerData.selectedBuilding
-		if PlayerData.money >= barracksScript.COST:
+		if PlayerData.money >= barracksScript.tank_COST[0] and PlayerData.energy >= barracksScript.tank_COST[1] and PlayerData.score >= barracksScript.tank_COST[2]:
 			barrack.spawn_tank_timer()
 		else:
 			get_parent().find_child("Message").set_text("Can't afford!")

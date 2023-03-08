@@ -18,7 +18,7 @@ func spawn_greyman(spawn_amount: int): # Spawns greymen at random locations
 		var greyman = greyman_scene.instantiate()
 		get_tree().get_root().add_child(greyman)
 		greyman.position.x = $AlienSpawner.global_position.x
-		greyman.position.y = randf_range(158, 470)
+		greyman.position.y = randf_range(220, 470)
 	
 func level_one(delta): # First level, can use as a template
 	if level_one_cooldown_timer <= 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b86hhelb34xvd"]
+[gd_scene load_steps=28 format=3 uid="uid://b86hhelb34xvd"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
@@ -25,9 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://ceias11glwken" path="res://assets/Backgrounds/backgroundMountainParalax.png" id="22_luc2h"]
 [ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="23_ia7ri"]
 [ext_resource type="PackedScene" uid="uid://bblmsh26u78sj" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
-[ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="26_71dk0"]
 [ext_resource type="PackedScene" uid="uid://cctfe4dpco8hk" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
-[ext_resource type="PackedScene" uid="uid://dw3pbdagxlvkk" path="res://src/Military/tank.tscn" id="30_o08kb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -88,8 +86,8 @@ animations = [{
 [node name="BattleScreen" type="Node2D"]
 position = Vector2(-118, -43)
 script = ExtResource("1_a60bb")
-metadata/_edit_vertical_guides_ = [1150.0, 1150.0, 1152.0, 576.0, 576.0, 576.0, 3500.0]
-metadata/_edit_horizontal_guides_ = [648.0, 138.0, 138.0]
+metadata/_edit_vertical_guides_ = [1150.0, 1150.0, 1152.0, 576.0, 576.0, 560.0, 3500.0]
+metadata/_edit_horizontal_guides_ = [648.0, 138.0, 138.0, 220.0, 450.0]
 
 [node name="Camera" parent="." instance=ExtResource("2_0sv4s")]
 position = Vector2(695, 374)
@@ -135,28 +133,6 @@ texture = ExtResource("23_ia7ri")
 [node name="CityArea" parent="." instance=ExtResource("24_ik2gs")]
 position = Vector2(172, 338)
 
-[node name="SoldierBasic2" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(587, 294)
-
-[node name="SoldierBasic" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(586, 352)
-
-[node name="SoldierBasic3" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(590, 240)
-
-[node name="SoldierBasic4" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(606, 487)
-
-[node name="SoldierBasic5" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(585, 470)
-
-[node name="SoldierBasic7" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(587, 202)
-shoot_distance_init = 350.0
-
-[node name="SoldierBasic6" parent="." instance=ExtResource("26_71dk0")]
-position = Vector2(588, 407)
-
 [node name="AlienSpawner" type="Node2D" parent="."]
 position = Vector2(3507, 313)
 
@@ -186,6 +162,3 @@ offset = Vector2(0, -10)
 transform = Transform2D(1, 0, 0, 1, 0, -10)
 
 [node name="ControlPanel" parent="UILayer" instance=ExtResource("4_da5fy")]
-
-[node name="Tank" parent="." instance=ExtResource("30_o08kb")]
-position = Vector2(580, 348)
