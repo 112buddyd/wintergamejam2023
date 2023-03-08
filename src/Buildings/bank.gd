@@ -23,5 +23,5 @@ func take_hit(damage: int):
 		destroy()
 		
 func destroy() -> void:
-	parent_building.un_hide()
+	parent_building.unhide_building()
 	queue_free()

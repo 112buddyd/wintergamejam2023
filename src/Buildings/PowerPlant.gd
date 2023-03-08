@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @export var level := 1
 @export var health := 500
-@export var baseGeneration = 2
+@export var baseGeneration = 20
 
 const COST = 250
 
@@ -27,5 +27,5 @@ func take_hit(damage: int):
 		destroy()
 		
 func destroy() -> void:
-	parent_building.un_hide()
+	parent_building.unhide_building()
 	queue_free()
