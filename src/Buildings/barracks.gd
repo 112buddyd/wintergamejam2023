@@ -139,7 +139,8 @@ func _input(event):
 		if isBuildingGUIActive:
 			barracksSelect.set_visible(false)
 			isBuildingGUIActive = false
-		else:
+			PlayerData.selectedBuilding = null
+		elif PlayerData.selectedBuilding == null:
 			barracksSelect.set_visible(true)
 			isBuildingGUIActive = true
 			PlayerData.selectedBuilding = self

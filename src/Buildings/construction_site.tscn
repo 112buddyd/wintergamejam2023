@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cctfe4dpco8hk"]
+[gd_scene load_steps=3 format=3 uid="uid://bypk4niurawm3"]
 
 [ext_resource type="Script" path="res://src/Buildings/construction_site.gd" id="1_kb3vj"]
 [ext_resource type="Texture2D" uid="uid://e2csdh4joa75" path="res://assets/Textures/construction_site.png" id="1_x35dt"]

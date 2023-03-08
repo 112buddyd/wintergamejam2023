@@ -26,12 +26,12 @@ func _on_item_activated(index):
 			var barrack = barracksScene.instantiate()
 			find_parent("BattleScreen").add_child(barrack)
 			barrack.global_position = PlayerData.selectedBuilding.global_position
-			barrack.global_position.y
-			barrack.global_position.x
 			barrack.parent_building = PlayerData.selectedBuilding
 			find_parent("BuildingSelect").set_visible(false)
+			find_parent("Panel").find_child("BarracksSelect").set_visible(true)
 			PlayerData.selectedBuilding.hide_building()
 			PlayerData.selectedBuilding = barrack
+			barrack.isBuildingGUIActive = true
 		else:
 			cannotAffordMessage()
 	elif index == 2:
