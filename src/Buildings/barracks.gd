@@ -44,7 +44,7 @@ func spawn_soldier_timer():
 				PlayerData.energy += soldier_COST[1]
 				PlayerData.score += soldier_COST[2]
 				return
-	$SoldierTimer.set_one_shot(false) 
+	#SoldierTimer.set_one_shot(false) 
 	if PlayerData.queue_repeat == true:
 		$SoldierTimer.set_one_shot(false)	
 	else:
@@ -98,12 +98,12 @@ func spawn_soldier():
 	get_tree().get_root().add_child(soldier)
 	soldier.global_position.x = 560
 	soldier.global_position.y = randf_range(220, 450)
-	if $TankTimer.is_one_shot() == false and PlayerData.money >= tank_COST[0] and PlayerData.energy >= tank_COST[1] and PlayerData.score >= tank_COST[2]:
+	if $SoldierTimer.is_one_shot() == false and PlayerData.money >= soldier_COST[0] and PlayerData.energy >= soldier_COST[1] and PlayerData.score >= soldier_COST[2]:
 		PlayerData.money -= soldier_COST[0]
 		PlayerData.energy -= soldier_COST[1]
 		PlayerData.score -= soldier_COST[2]
 	else:
-		$TankTimer.stop()
+		$SoldierTimer.stop()
 	
 func spawn_tank():
 	var tank = tankScene.instantiate()

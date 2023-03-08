@@ -9,9 +9,8 @@ var player_attack = false
 var player_retreat = false
 var queue_repeat = false
 var score = 10
-var money = 50
+var money = 500
 var energy = 10
-var militaryPower = 10
 var timer = 0.0
 
 var selectedBuilding = null

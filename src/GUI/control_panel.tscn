@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bn45bhvxumy08"]
+[gd_scene load_steps=13 format=3 uid="uid://bn45bhvxumy08"]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_6g3k6"]
 [ext_resource type="Script" path="res://src/GUI/Barracks/BarracksSelect.gd" id="2_1pj4s"]
@@ -20,9 +20,6 @@ bg_color = Color(0, 0.517647, 0.611765, 1)
 bg_color = Color(0.0705882, 0.490196, 0.494118, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b0ii"]
-bg_color = Color(0.0705882, 0.490196, 0.494118, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxuib"]
 bg_color = Color(0.0705882, 0.490196, 0.494118, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t05kg"]
@@ -117,13 +114,6 @@ size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_3b0ii")
 text = "        Energy:"
-
-[node name="Label3" type="Label" parent="Panel/HUD"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_qxuib")
-text = "        Military Strength:"
 
 [node name="Label4" type="Label" parent="Panel/HUD"]
 layout_mode = 2
