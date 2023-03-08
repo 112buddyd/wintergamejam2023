@@ -27,20 +27,20 @@ func spawn_greyman(spawn_amount: int): # Spawns greymen at random locations
 func level_one(delta): # First level, can use as a template
 	if level_cooldown_timer <= 0:
 		spawn_greyman(2)
-		level_cooldown_timer = 5
+		level_cooldown_timer = 10
 	else:
 		level_cooldown_timer -= delta
 		
 func level_two(delta): 
 	if level_cooldown_timer <= 0:
-		spawn_greyman(4)
-		level_cooldown_timer = 8
+		spawn_greyman(5)
+		level_cooldown_timer = 17
 	else:
 		level_cooldown_timer -= delta
 func level_three(delta): 
 	if level_cooldown_timer <= 0:
-		spawn_greyman(6)
-		level_cooldown_timer = 10
+		spawn_greyman(10)
+		level_cooldown_timer = 20
 	else:
 		level_cooldown_timer -= delta
 		
