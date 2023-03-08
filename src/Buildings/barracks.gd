@@ -1,13 +1,10 @@
 extends StaticBody2D
 
-@export var baseSpawnRate = 5
-@export var level := 1
 @export var health := 500
 var isMouseInBounds = false
-var timer = 0; 
-const COST = 100
 var isBuildingGUIActive = false
 var parent_building = null
+const COST = 100
 
 const tankScene = preload("res://src/Military/tank.tscn")
 const soldierScene = preload("res://src/Military/soldier_basic.tscn")
@@ -21,14 +18,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_node("ProgressBar").set_value(health/500)
-	timer += delta
-	if timer >= (baseSpawnRate / level):
-		if level >= 2:
-			spawn_soldier()
-			spawn_tank()
-		else:
-			spawn_soldier()
-		timer = 0
+	
 	
 	
 func take_hit(damage: int):
@@ -36,6 +26,30 @@ func take_hit(damage: int):
 	if health < 1:
 		destroy_barracks()
 		
+func spawn_soldier_timer():
+	print("activate")
+	for child in get_children():
+		if child is Timer:
+			if child.get_time_left() != 0:
+				return
+	$SoldierTimer.set_one_shot(PlayerData.queue_repeat)
+	$SoldierTimer.start(3)
+	print(str($SoldierTimer.is_one_shot()))
+	
+	
+func spawn_tank_timer():
+	for child in get_children():
+		if child is Timer:
+			if child.get_time_left() != 0:
+				return
+	$TankTimer.set_one_shot(PlayerData.queue_repeat)
+	$TankTimer.start(5)
+	
+		
+func timers_cancel():
+	$SoldierTimer.stop()
+	$TankTimer.stop()
+	
 func spawn_soldier():
 	var soldier = soldierScene.instantiate()
 	get_tree().get_root().add_child(soldier)
@@ -51,10 +65,6 @@ func destroy_barracks() -> void:
 	parent_building.unhide_building()
 	queue_free()
 	
-func level_up():
-	PlayerData.money -= COST
-	level += 1
-	
 	
 func _input(event):
 	if event.is_action_released("select") && isMouseInBounds:
@@ -62,10 +72,8 @@ func _input(event):
 		if isBuildingGUIActive:
 			barracksSelect.set_visible(false)
 			isBuildingGUIActive = false
-			PlayerData.selectedBuilding = null
 		else:
 			barracksSelect.set_visible(true)
-			barracksSelect.find_child("Message").set_text("Level " + str(level))
 			isBuildingGUIActive = true
 			PlayerData.selectedBuilding = self
 		get_viewport().set_input_as_handled()
@@ -77,3 +85,11 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	isMouseInBounds = false
+
+
+func _on_tank_timer_timeout():
+	spawn_tank()
+
+
+func _on_soldier_timer_timeout():
+	spawn_soldier()

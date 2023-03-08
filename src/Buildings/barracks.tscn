@@ -26,5 +26,11 @@ max_value = 1.0
 value = 1.0
 show_percentage = false
 
+[node name="SoldierTimer" type="Timer" parent="."]
+
+[node name="TankTimer" type="Timer" parent="."]
+
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="SoldierTimer" to="." method="_on_soldier_timer_timeout"]
+[connection signal="timeout" from="TankTimer" to="." method="_on_tank_timer_timeout"]

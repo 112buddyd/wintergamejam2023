@@ -7,6 +7,7 @@ signal player_retreat_func
 var player_hold = true
 var player_attack = false
 var player_retreat = false
+var queue_repeat = false
 var score = 10
 var money = 10000
 var energy = 50
@@ -28,3 +29,5 @@ func _process(delta):
 		player_hold = true
 		player_attack = false
 		player_retreat = false
+	if Input.is_action_just_pressed("repeat"):
+		PlayerData.queue_repeat != queue_repeat

@@ -1,35 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cs2j3coqyvbm1"]
+[gd_scene load_steps=14 format=3 uid="uid://cs2j3coqyvbm1"]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_6g3k6"]
 [ext_resource type="Script" path="res://src/GUI/Barracks/BarracksSelect.gd" id="2_1pj4s"]
 [ext_resource type="Script" path="res://src/GUI/HUD.gd" id="2_ugg5w"]
 [ext_resource type="Script" path="res://src/GUI/Barracks/BuildingSelect.gd" id="4_rlalp"]
-
-[sub_resource type="GDScript" id="GDScript_t23yr"]
-script/source = "extends Control
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
-
-
-
-func _on_item_list_item_activated(index):
-	if index == 0:
-		var barracksScript = load(\"res://src/Buildings/barracks.gd\")
-		if PlayerData.money >= barracksScript.COST:
-			var barrack = PlayerData.selectedBuilding
-			barrack.level_up()
-			barrack.isGUI
-			
-"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo5x"]
 bg_color = Color(0, 0.517647, 0.611765, 1)
@@ -66,7 +40,6 @@ offset_top = 524.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6g3k6")
-script = SubResource("GDScript_t23yr")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -100,9 +73,10 @@ size_flags_stretch_ratio = 0.5
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_constants/h_separation = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2dl0")
-item_count = 1
-max_columns = 0
-item_0/text = "Upgrade ($100)"
+item_count = 3
+item_0/text = "Train Soldier"
+item_1/text = "Train Tank"
+item_2/text = "Cancel"
 script = ExtResource("2_1pj4s")
 
 [node name="TextEdit2" type="TextEdit" parent="Panel/BarracksSelect"]

@@ -1,6 +1,7 @@
 extends ItemList
 
 var barracksScript = preload("res://src/Buildings/barracks.gd")
+var barrack = PlayerData.selectedBuilding
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,11 +14,18 @@ func _process(delta):
 
 func _on_item_activated(index):
 	if index == 0:
-		var barrack = PlayerData.selectedBuilding
+		barrack = PlayerData.selectedBuilding
 		if PlayerData.money >= barracksScript.COST:
-			barrack.level_up()
-			barrack.isBuildingGUIActive = false
-			get_parent().set_visible(false)
+			barrack.spawn_soldier_timer()
 		else:
 			get_parent().find_child("Message").set_text("Can't afford!")
+	if index == 1:
+		barrack = PlayerData.selectedBuilding
+		if PlayerData.money >= barracksScript.COST:
+			barrack.spawn_tank_timer()
+		else:
+			get_parent().find_child("Message").set_text("Can't afford!")
+	if index == 2:
+		barrack = PlayerData.selectedBuilding
+		barrack.timers_cancel()
 			

@@ -17,7 +17,6 @@ func _input(event):
 		if isBuildingGUIActive:
 			controlPanel.find_child("BuildingSelect").set_visible(false)
 			isBuildingGUIActive = false
-			PlayerData.selectedBuilding = null
 		else:
 			controlPanel.find_child("BuildingSelect").set_visible(true)
 			isBuildingGUIActive = true
