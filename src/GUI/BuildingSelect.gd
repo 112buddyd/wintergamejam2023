@@ -1,10 +1,11 @@
 extends ItemList
 var barracksScript = preload("res://src/Buildings/barracks.gd")
 var bankScript = preload("res://src/Buildings/bank.gd")
+var powerPlantScript = preload("res://src/Buildings/PowerPlant.gd")
 var isMouseInBounds = false;
 const barracksScene = preload("res://src/buildings/barracks.tscn")
 const bankScene = preload("res://src/buildings/Bank.tscn")
-var COST = 100
+var powerPlantScene = preload("res://src/Buildings/PowerPlant.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,38 +22,31 @@ func _process(delta):
 
 func _on_item_activated(index):
 	if index == 0:
-		if PlayerData.money >= barracksScript.COST:
-			PlayerData.money -= barracksScript.COST
-			var barrack = barracksScene.instantiate()
-			find_parent("BattleScreen").add_child(barrack)
-			barrack.global_position = PlayerData.selectedBuilding.global_position
-			barrack.parent_building = PlayerData.selectedBuilding
-			find_parent("BuildingSelect").set_visible(false)
-			find_parent("Panel").find_child("BarracksSelect").set_visible(true)
-			PlayerData.selectedBuilding.hide_building()
-			PlayerData.selectedBuilding = barrack
-			barrack.isBuildingGUIActive = true
-		else:
-			cannotAffordMessage()
+		build(barracksScript, barracksScene)
 	elif index == 2:
-		if PlayerData.money >= bankScript.COST:
-			PlayerData.money -= bankScript.COST
-			var bank = bankScene.instantiate()
-			find_parent("BattleScreen").add_child(bank)
-			bank.global_position = PlayerData.selectedBuilding.global_position
-			bank.parentBuilding = PlayerData.selectedBuilding
+		build(bankScript, bankScene)
+	elif index == 3:
+		build(powerPlantScript, powerPlantScene)
+			
+	
+func build(buildingScript, buildingScene):
+	if PlayerData.money >= buildingScript.COST:
+			PlayerData.money -= buildingScript.COST
+			var building = buildingScene.instantiate()
+			find_parent("BattleScreen").add_child(building)
+			building.global_position = PlayerData.selectedBuilding.global_position
+			building.parent_building = PlayerData.selectedBuilding
 			print(PlayerData.selectedBuilding)
 			find_parent("BuildingSelect").set_visible(false)
 			PlayerData.selectedBuilding.hide_building()
 			PlayerData.selectedBuilding = null
-		else:
-			cannotAffordMessage()
-			
-		
+	else:
+		cannotAffordMessage()
+	
 		
 func cannotAffordMessage():
 	var messageLabel = get_parent().find_child("Message")
-	messageLabel.set_text("Cannot Afford! Please select another choice.")
+	messageLabel.set_text("Cannot Afford!")
 	messageLabel.get_label_settings().set_font_size(16)
 		
 		
