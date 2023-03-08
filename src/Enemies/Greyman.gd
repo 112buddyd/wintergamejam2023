@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed := -100
 @export var damage := 10
-@export var shoot_distance_init : float = 600
+@export var shoot_distance_init : float = 300
 @export var health := 45
 @export var reload_time = 2.0
 
