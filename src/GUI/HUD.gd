@@ -2,7 +2,7 @@ extends HBoxContainer
 
 const MONEY_LAYOUT = " Money: "
 const ENERGY_LAYOUT = "        Energy: "
-const SCORE_LAYOUT = "        Score: "
+const SCORE_LAYOUT = "        Evacuated: "
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

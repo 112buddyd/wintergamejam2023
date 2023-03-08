@@ -120,7 +120,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_t05kg")
-text = "        Score:        "
+text = "     Evacuated:        "
 
 [node name="BuildingSelect" type="HBoxContainer" parent="Panel"]
 visible = false

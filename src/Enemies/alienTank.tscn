@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdc1vpe6o4hvq"]
+
+[ext_resource type="Script" path="res://src/Enemies/alienTank.gd" id="1_3qpo5"]
+[ext_resource type="Texture2D" uid="uid://xu41gu5qrac3" path="res://assets/Textures/Actors/alien_tank.png" id="2_yksnn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wehw"]
+size = Vector2(55, 78)
+
+[node name="AlienTank" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_3qpo5")
+
+[node name="ATBulletSpawn" type="Node2D" parent="."]
+position = Vector2(-33, 9)
+
+[node name="ATSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_yksnn")
+
+[node name="ATCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 6)
+shape = SubResource("RectangleShape2D_8wehw")

@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed := 80
 @export var damage_main := 30
 @export var shoot_distance_init_main : float = 600
-@export var health := 100
+@export var health := 200
 @export var reload_time_main = 6.0
 @export var reload_time_secondary = 0.5
 @export var shoot_distance_init_secondary : float = 350
@@ -64,7 +64,7 @@ func _process(_delta):
 		actor_velocity.x = 0
 	if PlayerData.player_retreat == true:
 		actor_velocity.x = resume_velocity * -1.0
-		if self.global_position.x <= 420:
+		if self.global_position.x <= 580:
 			actor_velocity.x = 0
 	set_velocity(actor_velocity)
 	move_and_slide()
