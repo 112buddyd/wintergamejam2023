@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://cw3ha51vmpgop"]
+[gd_scene load_steps=14 format=3 uid="uid://bn45bhvxumy08"]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_6g3k6"]
 [ext_resource type="Script" path="res://src/GUI/Barracks/BarracksSelect.gd" id="2_1pj4s"]
 [ext_resource type="Script" path="res://src/GUI/HUD.gd" id="2_ugg5w"]
-[ext_resource type="Script" path="res://src/GUI/Barracks/BuildingSelect.gd" id="4_rlalp"]
+[ext_resource type="Script" path="res://src/GUI/BuildingSelect.gd" id="4_5gs5x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo5x"]
 bg_color = Color(0, 0.517647, 0.611765, 1)
@@ -167,7 +167,7 @@ item_0/text = "Barracks ($40)"
 item_1/text = "Hospital ($100)"
 item_2/text = "Bank ($45)"
 item_3/text = "Power Plant ($250)"
-script = ExtResource("4_rlalp")
+script = ExtResource("4_5gs5x")
 
 [node name="TextEdit2" type="TextEdit" parent="Panel/BuildingSelect"]
 layout_mode = 2

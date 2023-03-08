@@ -3,7 +3,7 @@ var barracksScript = preload("res://src/Buildings/barracks.gd")
 var bankScript = preload("res://src/Buildings/bank.gd")
 var isMouseInBounds = false;
 const barracksScene = preload("res://src/buildings/barracks.tscn")
-const bankScene = preload("res://src/buildings/bank.tscn")
+const bankScene = preload("res://src/buildings/Bank.tscn")
 var COST = 100
 
 # Called when the node enters the scene tree for the first time.
@@ -40,9 +40,11 @@ func _on_item_activated(index):
 			var bank = bankScene.instantiate()
 			find_parent("BattleScreen").add_child(bank)
 			bank.global_position = PlayerData.selectedBuilding.global_position
+			bank.parentBuilding = PlayerData.selectedBuilding
+			print(PlayerData.selectedBuilding)
 			find_parent("BuildingSelect").set_visible(false)
 			PlayerData.selectedBuilding.hide_building()
-			PlayerData.selectedBuilding = bank
+			PlayerData.selectedBuilding = null
 		else:
 			cannotAffordMessage()
 			

@@ -2,7 +2,7 @@ extends StaticBody2D
 @export var level := 1
 @export var health := 500
 @export var baseIncome := 6
-var parent_building = null
+var parentBuilding = null
 const COST = 45
 var timer = 0
 # Called when the node enters the scene tree for the first time.
@@ -23,5 +23,5 @@ func take_hit(damage: int):
 		destroy()
 		
 func destroy() -> void:
-	parent_building.unhide_building()
+	parentBuilding.un_hide()
 	queue_free()

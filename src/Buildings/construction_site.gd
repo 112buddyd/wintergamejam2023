@@ -13,7 +13,7 @@ func _process(delta):
 
 func _input(event):
 	if event.is_action_released("select") && isMouseInBounds:
-		var controlPanel = get_parent().get_parent().find_child("ControlPanel")
+		var controlPanel = get_parent().find_child("ControlPanel")
 		if isBuildingGUIActive:
 			controlPanel.find_child("BuildingSelect").set_visible(false)
 			isBuildingGUIActive = false

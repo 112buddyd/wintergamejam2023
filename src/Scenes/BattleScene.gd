@@ -10,7 +10,7 @@ var level_two_cooldown_timer = 0
 
 func _process(delta): # When the timer hits thresholds waves start to appear
 	timer += delta
-	if timer > 119:
+	if timer > 30:
 		level_one(delta)
 	if timer > 150:
 		level_two(delta)
