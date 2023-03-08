@@ -145,6 +145,7 @@ z_index = -1
 position = Vector2(250, 500)
 
 [node name="construction_site5" parent="." instance=ExtResource("28_xj6oo")]
+visible = false
 z_index = -1
 position = Vector2(555, 258)
 

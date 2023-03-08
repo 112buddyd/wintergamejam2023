@@ -10,13 +10,14 @@ const tank_COST = [25,10,3]
 const sniper_cost = [10,5,1]
 var repeat = PlayerData.queue_repeat
 
+var barracksSelect = null
 const tankScene = preload("res://src/Military/tank.tscn")
 const soldierScene = preload("res://src/Military/soldier_basic.tscn")
 const sniperScene = preload("res://src/Military/Sniper.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	barracksSelect = get_parent().find_child("BarracksSelect")
 
 
 
@@ -130,12 +131,12 @@ func spawn_sniper():
 	
 func destroy_barracks() -> void:
 	parent_building.unhide_building()
+	barracksSelect.set_visible(false)
 	queue_free()
 	
 	
 func _input(event):
 	if event.is_action_released("select") && isMouseInBounds:
-		var barracksSelect = get_parent().find_child("ControlPanel").find_child("BarracksSelect")
 		if isBuildingGUIActive:
 			barracksSelect.set_visible(false)
 			isBuildingGUIActive = false
