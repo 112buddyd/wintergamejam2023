@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bn45bhvxumy08"]
+[gd_scene load_steps=14 format=3 uid="uid://bn45bhvxumy08"]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_6g3k6"]
 [ext_resource type="Script" path="res://src/GUI/Barracks/BarracksSelect.gd" id="2_1pj4s"]
 [ext_resource type="Script" path="res://src/GUI/HUD.gd" id="2_ugg5w"]
+[ext_resource type="Script" path="res://src/GUI/control_panel.gd" id="2_wixah"]
 [ext_resource type="Script" path="res://src/GUI/BuildingSelect.gd" id="4_5gs5x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo5x"]
@@ -37,6 +38,7 @@ offset_top = 524.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6g3k6")
+script = ExtResource("2_wixah")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

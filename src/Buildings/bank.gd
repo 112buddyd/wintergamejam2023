@@ -1,6 +1,6 @@
 extends StaticBody2D
 @export var level := 1
-@export var health := 500
+@export var health := 500.0
 @export var baseIncome := 6
 var parent_building = null
 const COST = 45

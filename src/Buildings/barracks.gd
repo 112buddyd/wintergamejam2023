@@ -1,8 +1,7 @@
 extends StaticBody2D
 
-@export var health := 500
+@export var health := 500.0
 var isMouseInBounds = false
-var isBuildingGUIActive = false
 var parent_building = null
 const COST = 40
 const soldier_COST = [8,0,1]
@@ -137,13 +136,14 @@ func destroy_barracks() -> void:
 	
 func _input(event):
 	if event.is_action_released("select") && isMouseInBounds:
-		if isBuildingGUIActive:
+		var isSelected = PlayerData.selectedBuilding == self
+		var controlPanel = get_parent().find_child("ControlPanel")
+		if isSelected:
 			barracksSelect.set_visible(false)
-			isBuildingGUIActive = false
 			PlayerData.selectedBuilding = null
-		elif PlayerData.selectedBuilding == null:
+		else:
+			controlPanel.clear()
 			barracksSelect.set_visible(true)
-			isBuildingGUIActive = true
 			PlayerData.selectedBuilding = self
 		get_viewport().set_input_as_handled()
 	

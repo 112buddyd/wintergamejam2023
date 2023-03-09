@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dg33fk5qyhn7t"]
+[gd_scene load_steps=4 format=3 uid="uid://dg33fk5qyhn7t"]
 
 [ext_resource type="Script" path="res://src/Buildings/barracks.gd" id="1_6kmo0"]
 [ext_resource type="Texture2D" uid="uid://twvb8n6vxa7h" path="res://assets/Textures/Barracks.png" id="2_e80w4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j00q8"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="Barracks" type="StaticBody2D" groups=["player"]]
 collision_layer = 4
@@ -17,20 +24,21 @@ position = Vector2(-4, -33)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("2_e80w4")
 
-[node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -34.0
-offset_top = -97.0
-offset_right = 34.0
-offset_bottom = -87.0
-max_value = 1.0
-value = 1.0
-show_percentage = false
-
 [node name="SoldierTimer" type="Timer" parent="."]
 
 [node name="TankTimer" type="Timer" parent="."]
 
 [node name="SniperTimer" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -34.0
+offset_top = -86.0
+offset_right = 34.0
+offset_bottom = -76.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_j00q8")
+max_value = 1.0
+value = 1.0
+show_percentage = false
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

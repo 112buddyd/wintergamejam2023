@@ -1,6 +1,5 @@
 extends StaticBody2D
 var isMouseInBounds = false;
-var isBuildingGUIActive = false;
 @export var health := 100 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,13 +13,13 @@ func _process(delta):
 func _input(event):
 	if event.is_action_released("select") && isMouseInBounds:
 		var controlPanel = get_parent().find_child("ControlPanel")
-		if isBuildingGUIActive:
+		var isSelected = PlayerData.selectedBuilding == self
+		if isSelected:
 			controlPanel.find_child("BuildingSelect").set_visible(false)
-			isBuildingGUIActive = false
 			PlayerData.selectedBuilding = null
-		elif PlayerData.selectedBuilding == null:
+		else:
+			controlPanel.clear()
 			controlPanel.find_child("BuildingSelect").set_visible(true)
-			isBuildingGUIActive = true
 			PlayerData.selectedBuilding = self
 		get_viewport().set_input_as_handled()
 	
