@@ -86,7 +86,7 @@ animations = [{
 [node name="BattleScreen" type="Node2D"]
 position = Vector2(-118, -43)
 script = ExtResource("1_a60bb")
-metadata/_edit_vertical_guides_ = [1150.0, 1150.0, 1152.0, 576.0, 576.0, 560.0, 3500.0]
+metadata/_edit_vertical_guides_ = [3500.0]
 metadata/_edit_horizontal_guides_ = [648.0, 138.0, 138.0, 220.0, 450.0]
 
 [node name="Camera" parent="." instance=ExtResource("2_0sv4s")]

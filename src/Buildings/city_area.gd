@@ -21,3 +21,4 @@ func take_hit(damage: int):
 
 func city_destroy() -> void:
 	queue_free()
+	get_tree().change_scene_to_file("res://src/Scenes/end_screen.tscn")

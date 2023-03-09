@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed := -120
 @export var damage := 15
 @export var shoot_distance_init : float = 200
-@export var health := 400
+@export var health := 250
 @export var reload_time = 3.0
 
 const bullet_scene = preload("res://src/bullets/g_mbullet.tscn")

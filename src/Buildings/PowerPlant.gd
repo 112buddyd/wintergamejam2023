@@ -2,9 +2,9 @@ extends StaticBody2D
 
 @export var level := 1
 @export var health := 500
-@export var baseGeneration = 20
+@export var baseGeneration = 6
 
-const COST = 250
+const COST = 40
 
 var timer = 0;
 
@@ -17,7 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	timer += delta
-	if timer >= 5:
+	if timer >= 3:
 		timer = 0
 		PlayerData.energy += (level * baseGeneration)
 	
