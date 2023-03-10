@@ -38,6 +38,8 @@ func _process(_delta):
 				gm_shoot(close_enemy)
 				return
 		actor_velocity.x = resume_velocity
+		if self.global_position.x >= 3240:
+			actor_velocity.x = 0
 	else:
 		actor_velocity.x = 0
 	if PlayerData.player_hold == true:
@@ -46,6 +48,7 @@ func _process(_delta):
 		actor_velocity.x = resume_velocity * -1.0
 		if self.global_position.x <= 580:
 			actor_velocity.x = 0
+
 	set_velocity(actor_velocity)
 	move_and_slide()
 	

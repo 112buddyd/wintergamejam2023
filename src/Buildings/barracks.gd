@@ -110,6 +110,7 @@ func timers_cancel():
 	$SoldierTimer.stop()
 	$TankTimer.stop()
 	$SniperTimer.stop()
+	$MedicTimer.stop()
 	
 func spawn_soldier():
 	var soldier = soldierScene.instantiate()
