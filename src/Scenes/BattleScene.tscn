@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bvvfxr1si2pka"]
+[gd_scene load_steps=31 format=3 uid="uid://bvvfxr1si2pka"]
 
 [ext_resource type="Script" path="res://src/Scenes/BattleScene.gd" id="1_a60bb"]
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
@@ -25,9 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://ceias11glwken" path="res://assets/Backgrounds/backgroundMountainParalax.png" id="22_luc2h"]
 [ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="23_ia7ri"]
 [ext_resource type="PackedScene" uid="uid://cgpgumhx6fn5c" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
-[ext_resource type="PackedScene" path="res://src/Military/medic.tscn" id="27_x11te"]
+[ext_resource type="PackedScene" uid="uid://bg0rb0vjxjo6x" path="res://src/Military/medic.tscn" id="27_x11te"]
 [ext_resource type="PackedScene" uid="uid://bypk4niurawm3" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
 [ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="28_yyfpr"]
+[ext_resource type="PackedScene" uid="uid://bpffgoq5ygb2f" path="res://src/Enemies/alien_mortar.tscn" id="29_gctim"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7yx8q"]
 animations = [{
@@ -173,3 +174,6 @@ position = Vector2(747, 340)
 
 [node name="SoldierBasic2" parent="." instance=ExtResource("28_yyfpr")]
 position = Vector2(745, 411)
+
+[node name="AlienMortar" parent="." instance=ExtResource("29_gctim")]
+position = Vector2(2303, 322)

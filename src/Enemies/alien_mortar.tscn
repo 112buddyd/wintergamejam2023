@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpffgoq5ygb2f"]
+
+[ext_resource type="Script" path="res://src/Enemies/alien_mortar.gd" id="1_g5oxp"]
+[ext_resource type="Texture2D" uid="uid://xwlnp5t6hxuw" path="res://assets/Textures/Actors/alienMortar.png" id="1_qw651"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cp7p1"]
+size = Vector2(93, 75)
+
+[node name="AlienMortar" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("1_g5oxp")
+
+[node name="AMSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_qw651")
+
+[node name="AMCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 4.5)
+shape = SubResource("RectangleShape2D_cp7p1")
+
+[node name="AMShoot" type="Node2D" parent="." groups=["enemy"]]
+position = Vector2(-45, -26)

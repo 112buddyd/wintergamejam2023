@@ -1,19 +1,17 @@
 extends CharacterBody2D
 
+@export var speed := -30
+@export var damage := 150
+@export var shoot_distance_init : float = 2000
+@export var health := 750
+@export var reload_time = 15.0
 
-@export var speed := 80
-@export var damage := 10
-@export var shoot_distance_init : float = 1000
-@export var health := 20
-@export var reload_time = 1.0
-
-const bullet_scene = preload("res://src/bullets/BSBullet.tscn")
+const bullet_scene = preload("res://src/bullets/mortar_bullet.tscn")
 
 var close_enemy
 var timer = reload_time
 var resume_velocity = 0
 var actor_velocity = Vector2.ZERO
-var max_health = health
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,11 +24,11 @@ func _ready():
 func _process(_delta):
 	if timer <= reload_time:
 		timer += _delta
-	if timer > reload_time and PlayerData.player_retreat == false:
+	if timer > reload_time:
 		var shoot_distance = shoot_distance_init
-		var all_enemy = get_tree().get_nodes_in_group("enemy")
+		var all_enemy = get_tree().get_nodes_in_group("playerbuilding")
 		for enemy in all_enemy:
-			var fire_to_enemy_distance = position.distance_to(enemy.position)
+			var fire_to_enemy_distance = position.distance_to(enemy.global_position)
 			if fire_to_enemy_distance < shoot_distance:
 				timer -= reload_time
 				shoot_distance = fire_to_enemy_distance
@@ -38,14 +36,9 @@ func _process(_delta):
 				gm_shoot(close_enemy)
 				return
 		actor_velocity.x = resume_velocity
+				
 	else:
 		actor_velocity.x = 0
-	if PlayerData.player_hold == true:
-		actor_velocity.x = 0
-	if PlayerData.player_retreat == true:
-		actor_velocity.x = resume_velocity * -1.0
-		if self.global_position.x <= 580:
-			actor_velocity.x = 0
 	set_velocity(actor_velocity)
 	move_and_slide()
 	
@@ -54,13 +47,13 @@ func _process(_delta):
 func gm_shoot(close_enemy):
 	var bullet = bullet_scene.instantiate()
 	get_tree().get_root().add_child(bullet)
-	bullet.position = $SniperFire.global_position
-	bullet.linear_velocity = close_enemy.global_position - bullet.position
+	bullet.position= $AMShoot.global_position
+	bullet.linear_velocity.x = close_enemy.global_position.x - bullet.global_position.x
 	bullet.damage = damage
-	bullet.speed = 3000
 	
 
 func take_hit(damage: int):
 	health -= damage
 	if health < 1:
 		queue_free()
+

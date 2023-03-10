@@ -10,7 +10,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="CityArea" type="StaticBody2D" groups=["player"]]
+[node name="CityArea" type="StaticBody2D" groups=["player", "playerbuilding"]]
 position = Vector2(56, 86)
 collision_layer = 4
 collision_mask = 0
