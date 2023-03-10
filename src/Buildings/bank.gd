@@ -16,6 +16,7 @@ func _process(delta):
 	if timer >= (3):
 		PlayerData.money += baseIncome
 		timer = 0
+	get_node("ProgressBar").set_value(health/500)
 	
 func take_hit(damage: int):
 	health -= damage

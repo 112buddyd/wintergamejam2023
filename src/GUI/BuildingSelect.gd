@@ -2,10 +2,12 @@ extends ItemList
 var barracksScript = preload("res://src/Buildings/barracks.gd")
 var bankScript = preload("res://src/Buildings/bank.gd")
 var powerPlantScript = preload("res://src/Buildings/PowerPlant.gd")
+var hospitalScript = preload("res://src/Buildings/Hospital.gd")
 var isMouseInBounds = false;
 const barracksScene = preload("res://src/buildings/barracks.tscn")
 const bankScene = preload("res://src/buildings/Bank.tscn")
-var powerPlantScene = preload("res://src/Buildings/PowerPlant.tscn")
+const powerPlantScene = preload("res://src/Buildings/PowerPlant.tscn")
+const hospitalScene = preload("res://src/Buildings/Hospital.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,6 +25,8 @@ func _process(delta):
 func _on_item_activated(index):
 	if index == 0:
 		build(barracksScript, barracksScene)
+	elif index == 1:
+		build(hospitalScript, hospitalScene)
 	elif index == 2:
 		build(bankScript, bankScene)
 	elif index == 3:

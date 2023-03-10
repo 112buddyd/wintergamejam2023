@@ -1,18 +1,20 @@
 extends StaticBody2D
 
 @export var health := 500.0
-var isMouseInBounds = false
-var parent_building = null
 const COST = 40
 const soldier_COST = [8,0,1]
 const tank_COST = [25,10,3]
 const sniper_cost = [10,5,1]
-var repeat = PlayerData.queue_repeat
-
-var barracksSelect = null
+const medic_cost = [20, 10, 1]
 const tankScene = preload("res://src/Military/tank.tscn")
 const soldierScene = preload("res://src/Military/soldier_basic.tscn")
 const sniperScene = preload("res://src/Military/Sniper.tscn")
+const medicScene = preload("res://src/Military/medic.tscn")
+
+var repeat = PlayerData.queue_repeat
+var barracksSelect = null
+var isMouseInBounds = false
+var parent_building = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,7 +52,25 @@ func spawn_soldier_timer():
 	$SoldierTimer.start(4)
 	print(str($SoldierTimer.is_one_shot()))
 	
+func spawn_medic_timer():
+	PlayerData.money -= medic_cost[0]
+	PlayerData.energy -= medic_cost[1]
+	PlayerData.score -= medic_cost[2]
+	for child in get_children():
+		if child is Timer:
+			if child.get_time_left() != 0:
+				PlayerData.money += medic_cost[0]
+				PlayerData.energy += medic_cost[1]
+				PlayerData.score += medic_cost[2]
+				return
+	if PlayerData.queue_repeat == true:
+		$MedicTimer.set_one_shot(false)	
+	else:
+		$MedicTimer.set_one_shot(true)
+	$MedicTimer.start(6)
+	print(str($MedicTimer.is_one_shot()))
 	
+
 func spawn_tank_timer():
 	PlayerData.money -= tank_COST[0]
 	PlayerData.energy -= tank_COST[1]
@@ -102,6 +122,18 @@ func spawn_soldier():
 		PlayerData.score -= soldier_COST[2]
 	else:
 		$SoldierTimer.stop()
+		
+func spawn_medic():
+	var medic = medicScene.instantiate()
+	get_tree().get_root().add_child(medic)
+	medic.global_position.x = 560
+	medic.global_position.y = randf_range(220, 450)
+	if $MedicTimer.is_one_shot() == false and PlayerData.money >= medic_cost[0] and PlayerData.energy >= medic_cost[1] and PlayerData.score >= medic_cost[2]:
+		PlayerData.money -= medic_cost[0]
+		PlayerData.energy -= medic_cost[1]
+		PlayerData.score -= medic_cost[2]
+	else:
+		$MedicTimer.stop()
 	
 func spawn_tank():
 	var tank = tankScene.instantiate()
@@ -165,3 +197,7 @@ func _on_soldier_timer_timeout():
 
 func _on_sniper_timer_timeout():
 	spawn_sniper()
+
+
+func _on_medic_timer_timeout():
+	spawn_medic()

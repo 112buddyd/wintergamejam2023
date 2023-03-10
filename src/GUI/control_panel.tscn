@@ -122,7 +122,7 @@ size_flags_vertical = 1
 size_flags_stretch_ratio = 0.5
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_ebo5x")
-text = "Level: "
+text = "Train Units"
 label_settings = SubResource("LabelSettings_xiga0")
 
 [node name="ItemList" type="ItemList" parent="Panel/BarracksSelect"]
@@ -132,11 +132,12 @@ size_flags_stretch_ratio = 0.6
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_constants/h_separation = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2dl0")
-item_count = 4
-item_0/text = "Train Soldier (8M, 0E, 1S)"
-item_1/text = "Train Tank (25M, 10E, 3S)"
+item_count = 5
+item_0/text = "Soldier (8M, 0E, 1S)"
+item_1/text = "Tank (25M, 10E, 3S)"
 item_2/text = "Sniper (10M, 5E, 1S)"
-item_3/text = "Cancel"
+item_3/text = "Medic (20M, 10E, 1S)"
+item_4/text = "Cancel"
 script = ExtResource("3_orcvy")
 
 [node name="TextEdit2" type="TextEdit" parent="Panel/BarracksSelect"]
@@ -270,7 +271,7 @@ item_count = 4
 max_columns = 4
 same_column_width = true
 item_0/text = "Barracks ($40)"
-item_1/text = "Hospital ($100)"
+item_1/text = "Hospital ($50)"
 item_2/text = "Bank ($45)"
 item_3/text = "Power Plant ($250)"
 script = ExtResource("4_5gs5x")

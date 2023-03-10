@@ -19,16 +19,21 @@ func _on_item_activated(index):
 			barrack.spawn_soldier_timer()
 		else:
 			get_parent().find_child("Message").set_text("Can't afford!")
-	if index == 1:
+	elif index == 1:
 		if PlayerData.money >= barracksScript.tank_COST[0] and PlayerData.energy >= barracksScript.tank_COST[1] and PlayerData.score >= barracksScript.tank_COST[2]:
 			barrack.spawn_tank_timer()
 		else:
 			get_parent().find_child("Message").set_text("Can't afford!")
-	if index == 2:
+	elif index == 2:
 		if PlayerData.money >= barracksScript.sniper_cost[0] and PlayerData.energy >= barracksScript.sniper_cost[1] and PlayerData.score >= barracksScript.sniper_cost[2]:
 			barrack.spawn_sniper_timer()
 		else:
 			get_parent().find_child("Message").set_text("Can't afford!")
-	if index == 3:
+	elif index == 3:
+		if PlayerData.money >= barracksScript.medic_cost[0] and PlayerData.energy >= barracksScript.medic_cost[1] and PlayerData.score >= barracksScript.medic_cost[2]:
+			barrack.spawn_medic_timer()
+		else:
+			get_parent().find_child("Message").set_text("Can't afford!")
+	elif index == 4:
 		barrack.timers_cancel()
 			

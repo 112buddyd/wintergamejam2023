@@ -16,7 +16,6 @@ func _process(delta):
 
 
 
-
 func _on_troop_controller_item_selected(index):
 	if index == 0:
 		PlayerData.player_retreat = true
