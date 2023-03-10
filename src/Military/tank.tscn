@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syi5r"]
 size = Vector2(94, 53)
 
-[node name="Tank" type="CharacterBody2D" groups=["player"]]
+[node name="Tank" type="CharacterBody2D" groups=["player", "playermovable"]]
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_u4btt")
