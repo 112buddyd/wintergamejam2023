@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://ceias11glwken" path="res://assets/Backgrounds/backgroundMountainParalax.png" id="22_luc2h"]
 [ext_resource type="Texture2D" uid="uid://c04867hpos2h2" path="res://assets/Backgrounds/background.png" id="23_ia7ri"]
 [ext_resource type="PackedScene" uid="uid://cgpgumhx6fn5c" path="res://src/Buildings/city_area.tscn" id="24_ik2gs"]
-[ext_resource type="PackedScene" path="res://src/Military/medic.tscn" id="27_x11te"]
+[ext_resource type="PackedScene" uid="uid://dj08x0upblvg8" path="res://src/Military/medic.tscn" id="27_x11te"]
 [ext_resource type="PackedScene" uid="uid://bypk4niurawm3" path="res://src/Buildings/construction_site.tscn" id="28_xj6oo"]
 [ext_resource type="PackedScene" uid="uid://c7yli1jw4mq2u" path="res://src/Military/soldier_basic.tscn" id="28_yyfpr"]
 
