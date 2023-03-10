@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6apb3lm128pq"]
+[gd_scene load_steps=15 format=3 uid="uid://b6apb3lm128pq"]
 
 [ext_resource type="Script" path="res://src/Scenes/start_screen.gd" id="1_367sn"]
+[ext_resource type="Texture2D" uid="uid://twvb8n6vxa7h" path="res://assets/Textures/Barracks.png" id="2_o2xpo"]
+[ext_resource type="Texture2D" uid="uid://e2csdh4joa75" path="res://assets/Textures/construction_site.png" id="3_7yxeu"]
+[ext_resource type="Texture2D" uid="uid://7tbyfrx4kckv" path="res://assets/Textures/PowerPlant.png" id="4_wcmss"]
+[ext_resource type="Texture2D" uid="uid://6wvspc32ejlq" path="res://assets/Textures/Bank.png" id="5_py4x3"]
+[ext_resource type="Texture2D" uid="uid://cyht8qjpjkstl" path="res://assets/Textures/hospital_sprite.png" id="6_kt58l"]
+[ext_resource type="Texture2D" uid="uid://co2hblfvn4hgh" path="res://assets/Textures/test city plz ignore.png" id="7_vmg2f"]
+[ext_resource type="Texture2D" uid="uid://k032oiah6hrt" path="res://assets/Textures/Actors/BasicSoldier.png" id="8_w0m5h"]
+[ext_resource type="Texture2D" uid="uid://cvxvaajgmhyra" path="res://assets/Textures/Actors/Medic.png" id="9_8isem"]
+[ext_resource type="Texture2D" uid="uid://bhvewh20kyfj0" path="res://assets/Textures/Actors/sniper.png" id="10_nbwf6"]
+[ext_resource type="Texture2D" uid="uid://bsyhunq2b41on" path="res://assets/Textures/Actors/Tankman.png" id="11_7p4go"]
+[ext_resource type="Texture2D" uid="uid://c6me1bled7syl" path="res://assets/Textures/Actors/greenman.png" id="12_pcshg"]
+[ext_resource type="Texture2D" uid="uid://xu41gu5qrac3" path="res://assets/Textures/Actors/alien_tank.png" id="13_tlkvn"]
+[ext_resource type="Texture2D" uid="uid://xwlnp5t6hxuw" path="res://assets/Textures/Actors/alienMortar.png" id="14_12m6j"]
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -73,8 +86,8 @@ text = "Help"
 
 [node name="HideButton" type="Button" parent="ColorRect2"]
 layout_mode = 0
-offset_left = 1095.0
-offset_top = 614.0
+offset_left = 1056.0
+offset_top = 601.0
 offset_right = 1145.0
 offset_bottom = 645.0
 text = "Close"
@@ -86,6 +99,253 @@ offset_top = 27.0
 offset_right = 658.0
 offset_bottom = 53.0
 text = "Delay The Inevitable"
+
+[node name="Label3" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 338.0
+offset_bottom = 234.0
+text = "Controls:
+
+Move Camera: A,D Left,Right NUM4,NUM6
+Advance Units: 3 or Click Advance Button
+Hold Units: 2 or Click Hold Button
+Retreat Units: 1 or Click Retreat Button
+Toggle Repeat: 4 or Click Repeat Toggle
+Repeat keeps the building spawning units
+until cancel button is pressed on building
+OR you run out of resources."
+
+[node name="Barracks" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(195, 292)
+scale = Vector2(0.0529234, 0.0597206)
+texture = ExtResource("2_o2xpo")
+
+[node name="Label4" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 359.0
+offset_right = 242.0
+offset_bottom = 411.0
+text = "Barracks:
+Trains Units"
+
+[node name="ConstructionSite" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(75, 334)
+scale = Vector2(0.174306, 0.163195)
+texture = ExtResource("3_7yxeu")
+
+[node name="Label5" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_top = 359.0
+offset_right = 138.0
+offset_bottom = 411.0
+text = "Construction Site:
+Spawns Buildings"
+
+[node name="Label6" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 359.0
+offset_right = 388.0
+offset_bottom = 411.0
+text = "Bank:
+Generate Cash"
+
+[node name="PowerPlant" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(464, 314)
+scale = Vector2(0.161458, 0.122917)
+texture = ExtResource("4_wcmss")
+
+[node name="Bank" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(329, 298)
+scale = Vector2(0.152083, 0.157639)
+texture = ExtResource("5_py4x3")
+
+[node name="Label7" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 533.0
+offset_top = 65.0
+offset_right = 613.0
+offset_bottom = 91.0
+text = "Resources"
+
+[node name="Label8" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 100.0
+offset_right = 729.0
+offset_bottom = 126.0
+text = "Cash: Used to build Buildings and troops
+Energy: Used to make advanced troops
+Evacuated: Score of the game, but is also 
+used to suppliment your army"
+
+[node name="Label9" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 359.0
+offset_right = 539.0
+offset_bottom = 411.0
+text = "Power Plant:
+Generates Energy"
+
+[node name="Label10" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 359.0
+offset_right = 668.0
+offset_bottom = 411.0
+text = "Hospital:
+Helps Evacuate"
+
+[node name="HospitalSprite" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(613, 314)
+scale = Vector2(0.244, 0.254011)
+texture = ExtResource("6_kt58l")
+
+[node name="TestCityPlzIgnore" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(743, 314)
+scale = Vector2(0.205556, 0.213889)
+texture = ExtResource("7_vmg2f")
+
+[node name="Label11" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 359.0
+offset_right = 784.0
+offset_bottom = 411.0
+text = "City:
+Lose and die"
+
+[node name="BasicSoldier" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(855, 314)
+texture = ExtResource("8_w0m5h")
+
+[node name="Label12" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 806.0
+offset_top = 355.0
+offset_right = 934.0
+offset_bottom = 433.0
+text = "Basic Soldier:
+Cheap and weak
+Low Range
+Zergable"
+
+[node name="Medic" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(987, 318)
+texture = ExtResource("9_8isem")
+
+[node name="Label13" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 962.0
+offset_top = 353.0
+offset_right = 1002.0
+offset_bottom = 376.0
+text = "Medic: 
+Expensive but keeps
+others alive, 
+good healing."
+
+[node name="Sniper" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(70, 457)
+texture = ExtResource("10_nbwf6")
+
+[node name="Tankman" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(242, 465)
+texture = ExtResource("11_7p4go")
+
+[node name="Label14" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 495.0
+offset_right = 147.0
+offset_bottom = 573.0
+text = "Sniper:
+Attacks from afar
+Medium Price
+Extremely good
+aganisnt Mortars"
+
+[node name="Greenman" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(417, 457)
+texture = ExtResource("12_pcshg")
+
+[node name="Label15" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 497.0
+offset_right = 342.0
+offset_bottom = 601.0
+text = "Tank:
+Dual Attack, Cannon
+and gun. Expensive
+Good HP and firepower"
+
+[node name="AlienTank" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(552, 448)
+texture = ExtResource("13_tlkvn")
+
+[node name="Label16" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 361.0
+offset_top = 497.0
+offset_right = 476.0
+offset_bottom = 601.0
+text = "Greenman:
+Pathetic and 
+unremarkable,
+Can swarm.
+"
+
+[node name="Label17" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AlienMortar" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(723, 448)
+texture = ExtResource("14_12m6j")
+
+[node name="Label18" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 507.0
+offset_right = 620.0
+offset_bottom = 611.0
+text = "Alien Guardian:
+Heavy hitter,
+High HP,
+Can Multiattack"
+
+[node name="Label19" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 647.0
+offset_top = 507.0
+offset_right = 823.0
+offset_bottom = 611.0
+text = "Alien Mortar:
+Attack city and ignores
+everything else, 
+VERY dangerous!"
+
+[node name="Label20" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 784.0
+offset_right = 830.0
+offset_bottom = 26.0
+text = "Hints:
+- Get an economy first, you have some time 
+before the aliens arrive. Use banks for cash!
+- Mortars being a pain? Use snipers as they are 
+extra effective.
+- Soldiers will need to advance to engage with
+distant foes like greenmen.
+- Don't forget energy for advanced units like 
+tanks and medics.
+- Use repeat feature if you need to make a lot
+of something."
 
 [connection signal="button_up" from="VBoxContainer/PlayButton" to="." method="_on_play_button_button_up"]
 [connection signal="button_up" from="VBoxContainer/HelpButton" to="." method="_on_help_button_button_up"]
