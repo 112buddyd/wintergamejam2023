@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bn45bhvxumy08"]
+[gd_scene load_steps=18 format=3 uid="uid://bn45bhvxumy08"]
 
 [ext_resource type="Theme" uid="uid://blya82iodl8rd" path="res://assets/GUITheme.tres" id="1_6g3k6"]
 [ext_resource type="Script" path="res://src/GUI/Barracks/BarracksSelect.gd" id="2_1pj4s"]
 [ext_resource type="Script" path="res://src/GUI/HUD.gd" id="2_ugg5w"]
 [ext_resource type="Script" path="res://src/GUI/control_panel.gd" id="2_wixah"]
 [ext_resource type="Script" path="res://src/GUI/BuildingSelect.gd" id="4_5gs5x"]
+[ext_resource type="Script" path="res://src/GUI/TroopController.gd" id="5_6omtt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebo5x"]
 bg_color = Color(0, 0.517647, 0.611765, 1)
@@ -26,6 +27,21 @@ bg_color = Color(0.0705882, 0.490196, 0.494118, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t05kg"]
 bg_color = Color(0.0705882, 0.490196, 0.494118, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y4nc"]
+content_margin_left = 10.0
+content_margin_top = 2.0
+content_margin_bottom = 0.0
+bg_color = Color(0.0705882, 0.490196, 0.494118, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ac3w"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcgyd"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrlp"]
 bg_color = Color(0, 0.517647, 0.611765, 1)
 
@@ -42,8 +58,7 @@ script = ExtResource("2_wixah")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_right = 1154.0
+offset_right = 1153.0
 offset_bottom = 133.0
 
 [node name="BarracksSelect" type="HBoxContainer" parent="Panel"]
@@ -68,7 +83,7 @@ label_settings = SubResource("LabelSettings_xiga0")
 [node name="ItemList" type="ItemList" parent="Panel/BarracksSelect"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.5
+size_flags_stretch_ratio = 0.6
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_constants/h_separation = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_b2dl0")
@@ -100,7 +115,7 @@ offset_right = 1151.0
 offset_bottom = 30.0
 mouse_filter = 0
 theme = SubResource("Theme_2s6e0")
-theme_override_constants/separation = -1
+theme_override_constants/separation = 0
 script = ExtResource("2_ugg5w")
 
 [node name="Label" type="Label" parent="Panel/HUD"]
@@ -123,6 +138,25 @@ size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_t05kg")
 text = "     Evacuated:        "
+
+[node name="TroopController" type="ItemList" parent="Panel/HUD"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/panel = SubResource("StyleBoxFlat_2y4nc")
+theme_override_styles/focus = SubResource("StyleBoxFlat_1ac3w")
+theme_override_styles/selected_focus = SubResource("StyleBoxFlat_bcgyd")
+item_count = 3
+max_columns = 3
+fixed_column_width = 100
+icon_mode = 0
+icon_scale = 0.0
+item_0/text = "Retreat"
+item_1/text = "Hold"
+item_2/text = "Advance"
+script = ExtResource("5_6omtt")
 
 [node name="BuildingSelect" type="HBoxContainer" parent="Panel"]
 visible = false
@@ -177,4 +211,5 @@ middle_mouse_paste_enabled = false
 minimap_width = 100
 
 [connection signal="item_activated" from="Panel/BarracksSelect/ItemList" to="Panel/BarracksSelect/ItemList" method="_on_item_activated"]
+[connection signal="item_activated" from="Panel/HUD/TroopController" to="Panel/HUD/TroopController" method="_on_item_activated"]
 [connection signal="item_activated" from="Panel/BuildingSelect/ItemList" to="Panel/BuildingSelect/ItemList" method="_on_item_activated"]
