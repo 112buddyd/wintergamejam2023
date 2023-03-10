@@ -43,7 +43,6 @@ func spawn_soldier_timer():
 				PlayerData.energy += soldier_COST[1]
 				PlayerData.score += soldier_COST[2]
 				return
-	#SoldierTimer.set_one_shot(false) 
 	if PlayerData.queue_repeat == true:
 		$SoldierTimer.set_one_shot(false)	
 	else:

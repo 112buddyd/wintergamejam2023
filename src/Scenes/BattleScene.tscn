@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bylgb1df3sf35" path="res://src/Camera/Camera.tscn" id="2_0sv4s"]
 [ext_resource type="Script" path="res://src/Scenes/CloudLayer.gd" id="3_f73sk"]
 [ext_resource type="Script" path="res://src/Scenes/WillSmiff.gd" id="3_hmqi1"]
-[ext_resource type="PackedScene" uid="uid://bn45bhvxumy08" path="res://src/GUI/control_panel.tscn" id="4_da5fy"]
+[ext_resource type="PackedScene" uid="uid://tumibj04ya4o" path="res://src/GUI/control_panel.tscn" id="4_da5fy"]
 [ext_resource type="Texture2D" uid="uid://b6uw6r5wttf8k" path="res://assets/Backgrounds/clouds.png" id="4_oqc2o"]
 [ext_resource type="Texture2D" uid="uid://de05dqexhkt8v" path="res://assets/Backgrounds/DogfightAnimation/frame0000.png" id="6_3o2to"]
 [ext_resource type="Texture2D" uid="uid://dh50gsyxj2nu3" path="res://assets/Backgrounds/DogfightAnimation/frame0001.png" id="7_pneam"]

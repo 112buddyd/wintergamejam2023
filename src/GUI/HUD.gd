@@ -13,3 +13,25 @@ func _process(delta):
 	get_child(0).set_text(MONEY_LAYOUT + str(PlayerData.money))
 	get_child(1).set_text(ENERGY_LAYOUT + str(PlayerData.energy))
 	get_child(2).set_text(SCORE_LAYOUT + str(PlayerData.score) + "        ")
+
+
+func _on_troop_controller_item_activated(index):
+	if index == 0:
+		PlayerData.player_retreat = true
+		PlayerData.player_hold = false
+		PlayerData.player_attack = false
+	elif index == 1:
+		PlayerData.player_hold = true
+		PlayerData.player_retreat = false
+		PlayerData.player_attack = false
+	elif index == 2:
+		PlayerData.player_retreat = false
+		PlayerData.player_hold = false
+		PlayerData.player_attack = true
+
+
+func _on_queue_toggle_item_activated(index):
+	if index == 0:
+		PlayerData.queue_repeat = true
+	else:
+		PlayerData.queue_repeat = false
