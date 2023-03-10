@@ -13,6 +13,7 @@ var close_enemy
 var timer = reload_time
 var resume_velocity = 0
 var actor_velocity = Vector2.ZERO
+var max_health = health
 
 
 # Called when the node enters the scene tree for the first time.

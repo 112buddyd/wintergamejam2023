@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 
-@export var speed := 75
-@export var damage := 10
-@export var shoot_distance_init : float = 250
-@export var health := 30
-@export var reload_time = 0.9
+@export var speed := 80
+@export var damage := -2
+@export var shoot_distance_init : float = 400
+@export var health := 50
+@export var reload_time = 0.2
 
 const bullet_scene = preload("res://src/bullets/BSBullet.tscn")
 
@@ -28,10 +28,10 @@ func _process(_delta):
 		timer += _delta
 	if timer > reload_time and PlayerData.player_retreat == false:
 		var shoot_distance = shoot_distance_init
-		var all_enemy = get_tree().get_nodes_in_group("enemy")
+		var all_enemy = get_tree().get_nodes_in_group("playermovable")
 		for enemy in all_enemy:
 			var fire_to_enemy_distance = position.distance_to(enemy.position)
-			if fire_to_enemy_distance < shoot_distance:
+			if fire_to_enemy_distance < shoot_distance and enemy.get_health() < enemy.get_max_health():
 				timer -= reload_time
 				shoot_distance = fire_to_enemy_distance
 				close_enemy = enemy
@@ -52,13 +52,10 @@ func _process(_delta):
 	
 
 func gm_shoot(close_enemy):
-	var bullet = bullet_scene.instantiate()
-	get_tree().get_root().add_child(bullet)
-	bullet.position = $BSBS.global_position
-	bullet.linear_velocity = close_enemy.global_position - bullet.position
-	bullet.damage = damage
+	if close_enemy.has_method("take_hit") and close_enemy.health < close_enemy.max_health:
+		close_enemy.take_hit(damage)
+		print(str(close_enemy.health))
 	
-
 func take_hit(damage: int):
 	health -= damage
 	if health < 1:

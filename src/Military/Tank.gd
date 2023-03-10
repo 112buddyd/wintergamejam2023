@@ -18,6 +18,7 @@ var timer_main = reload_time_main
 var timer_secondary = reload_time_secondary
 var resume_velocity = 0
 var actor_velocity = Vector2.ZERO
+var max_health = health
 
 
 # Called when the node enters the scene tree for the first time.
