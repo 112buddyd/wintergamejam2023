@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 @export var health := 5000.0
+var max_health = health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +12,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	get_node("ProgressBar").set_value(health/5000)
+	if max_health > health:
+		health += delta
 	
 	
 func take_hit(damage: int):

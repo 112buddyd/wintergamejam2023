@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cp7p1"]
 size = Vector2(93, 75)
 
-[node name="AlienMortar" type="CharacterBody2D"]
+[node name="AlienMortar" type="CharacterBody2D" groups=["enemy", "mortar"]]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_g5oxp")

@@ -93,3 +93,9 @@ func take_hit(damage: int):
 	health -= damage
 	if health < 1:
 		queue_free()
+		
+func get_health():
+	return health
+	
+func get_max_health(): 
+	return max_health

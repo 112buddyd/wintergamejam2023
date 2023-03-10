@@ -273,7 +273,7 @@ same_column_width = true
 item_0/text = "Barracks ($40)"
 item_1/text = "Hospital ($50)"
 item_2/text = "Bank ($45)"
-item_3/text = "Power Plant ($250)"
+item_3/text = "Power Plant ($40)"
 script = ExtResource("4_5gs5x")
 
 [node name="TextEdit2" type="TextEdit" parent="Panel/BuildingSelect"]
@@ -290,6 +290,17 @@ drag_and_drop_selection_enabled = false
 virtual_keyboard_enabled = false
 middle_mouse_paste_enabled = false
 minimap_width = 100
+
+[node name="MortarLabel" type="Label" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 655.0
+offset_top = 44.0
+offset_right = 1054.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "ALIEN MORTAR ON FIELD!"
 
 [connection signal="item_activated" from="Panel/BarracksSelect/ItemList" to="Panel/BarracksSelect/ItemList" method="_on_item_activated"]
 [connection signal="item_selected" from="Panel/HUD/TroopController" to="Panel/HUD" method="_on_troop_controller_item_selected"]
