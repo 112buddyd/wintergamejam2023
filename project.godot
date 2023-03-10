@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="WinterJam2023"
-run/main_scene="res://src/Scenes/BattleScene.tscn"
+run/main_scene="res://src/Scenes/start_screen.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
