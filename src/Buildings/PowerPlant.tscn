@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvpyxdfoy16c6"]
+[gd_scene load_steps=4 format=3 uid="uid://7u0ciibrlxbx"]
 
 [ext_resource type="Script" path="res://src/Buildings/PowerPlant.gd" id="1_vxtod"]
 [ext_resource type="Texture2D" uid="uid://7tbyfrx4kckv" path="res://assets/Textures/PowerPlant.png" id="2_nlo0s"]

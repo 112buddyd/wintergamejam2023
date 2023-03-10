@@ -18,11 +18,16 @@ func _process(delta):
 		timer = 0
 	get_node("ProgressBar").set_value(health/500)
 	
+	
+
 func take_hit(damage: int):
 	health -= damage
 	if health < 1:
 		destroy()
 		
+
 func destroy() -> void:
 	parent_building.unhide_building()
 	queue_free()
+	
+
