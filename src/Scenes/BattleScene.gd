@@ -10,11 +10,11 @@ var level_cooldown_timer = 0
 
 func _process(delta): # When the timer hits thresholds waves start to appear
 	timer += delta
-	if timer > 0:
-		level_one(delta)
 	if timer > 60:
-		level_two(delta)
+		level_one(delta)
 	if timer > 90:
+		level_two(delta)
+	if timer > 120:
 		level_three(delta)
 
 
@@ -35,7 +35,7 @@ func spawn_alien_tank(spawn_amount: int): # Spawns greymen at random locations
 func level_one(delta): # First level, can use as a template
 	if level_cooldown_timer <= 0:
 		spawn_greyman(2)
-		level_cooldown_timer = 5
+		level_cooldown_timer = 7
 	else:
 		level_cooldown_timer -= delta
 		
@@ -43,14 +43,13 @@ func level_two(delta):
 	if level_cooldown_timer <= 0:
 		spawn_greyman(4)
 		spawn_alien_tank(1)
-		level_cooldown_timer = 8
+		level_cooldown_timer = 11
 	else:
 		level_cooldown_timer -= delta
 func level_three(delta): 
 	if level_cooldown_timer <= 0:
 		spawn_greyman(6)
-		spawn_alien_tank(3)
-		level_cooldown_timer = 10
+		level_cooldown_timer = 13
 	else:
 		level_cooldown_timer -= delta
 		
