@@ -15,7 +15,9 @@ func _process(delta):
 	get_child(2).set_text(SCORE_LAYOUT + str(PlayerData.score) + "        ")
 
 
-func _on_troop_controller_item_activated(index):
+
+
+func _on_troop_controller_item_selected(index):
 	if index == 0:
 		PlayerData.player_retreat = true
 		PlayerData.player_hold = false
@@ -30,7 +32,7 @@ func _on_troop_controller_item_activated(index):
 		PlayerData.player_attack = true
 
 
-func _on_queue_toggle_item_activated(index):
+func _on_queue_toggle_item_selected(index):
 	if index == 0:
 		PlayerData.queue_repeat = true
 	else:
