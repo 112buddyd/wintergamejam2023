@@ -107,6 +107,7 @@ offset_right = 1153.0
 offset_bottom = 133.0
 
 [node name="BarracksSelect" type="HBoxContainer" parent="Panel"]
+visible = false
 layout_mode = 2
 offset_left = 2.0
 offset_top = 36.0
@@ -270,7 +271,7 @@ item_count = 4
 max_columns = 4
 same_column_width = true
 item_0/text = "Barracks ($40)"
-item_1/text = "Hospital ($100)"
+item_1/text = "Hospital ($50)"
 item_2/text = "Bank ($45)"
 item_3/text = "Power Plant ($250)"
 script = ExtResource("4_5gs5x")

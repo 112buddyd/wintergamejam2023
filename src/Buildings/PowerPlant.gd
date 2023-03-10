@@ -20,6 +20,7 @@ func _process(delta):
 	if timer >= 3:
 		timer = 0
 		PlayerData.energy += (level * baseGeneration)
+	get_node("ProgressBar").set_value(health/500)
 	
 func take_hit(damage: int):
 	health -= damage

@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://euljeplgj3l5"]
+[gd_scene load_steps=4 format=3 uid="uid://euljeplgj3l5"]
 
 [ext_resource type="Texture2D" uid="uid://cyht8qjpjkstl" path="res://assets/Textures/hospital_sprite.png" id="1_ig2g5"]
 [ext_resource type="Script" path="res://src/Buildings/Hospital.gd" id="1_ny32l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_urtix"]
+bg_color = Color(0, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
 
 [node name="Hospital" type="StaticBody2D" groups=["player"]]
 scale = Vector2(0.4, 0.4)
@@ -15,3 +22,13 @@ polygon = PackedVector2Array(2, -188, 205, -82, 202, 20, 234, 38, -24, 174, -253
 [node name="Sprite2D" type="Sprite2D" parent="CollisionPolygon2D"]
 scale = Vector2(1, 1)
 texture = ExtResource("1_ig2g5")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -127.5
+offset_top = -220.0
+offset_right = 127.5
+offset_bottom = -195.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_urtix")
+max_value = 1.0
+value = 1.0
+show_percentage = false

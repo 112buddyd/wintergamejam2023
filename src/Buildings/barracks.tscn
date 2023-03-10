@@ -33,10 +33,10 @@ texture = ExtResource("2_e80w4")
 [node name="MedicTimer" type="Timer" parent="."]
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-offset_left = -34.0
-offset_top = -86.0
-offset_right = 34.0
-offset_bottom = -76.0
+offset_left = -53.0
+offset_top = -80.0
+offset_right = 53.0
+offset_bottom = -70.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_j00q8")
 max_value = 1.0
 value = 1.0
