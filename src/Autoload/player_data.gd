@@ -17,7 +17,7 @@ var selectedBuilding = null
 
 func _process(delta):
 	if get_tree().current_scene.get_name() == "StartScreen":
-		pass
+		return
 	timer += delta
 	if Input.is_action_just_pressed("go"):
 		player_hold = false
